@@ -1,13 +1,13 @@
 package tests;
 
 import org.testng.annotations.Test;
-import pages.adminPages;
+import pages.userPages;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US01 {
 
-    adminPages adminPages= new adminPages();
+    userPages adminPages= new userPages();
 
     @Test
     public void US01(){

@@ -1,4 +1,4 @@
-package eren;
+package tests.eren;
 
 public class US_040 {
     public static void main(String[] args) {

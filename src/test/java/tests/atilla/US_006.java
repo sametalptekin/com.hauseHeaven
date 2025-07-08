@@ -17,6 +17,7 @@ public class US_006 {
         userPages userPages = new userPages();
         userPages.listingButton.click();
         ReusableMethods.bekle(3);
+        tearDown();
     }
 
     @Test
@@ -32,9 +33,7 @@ public class US_006 {
         if (actualTitle.contains(expectedTitle)) {
             System.out.println("Sayfa başarılı şekilde açıldı. Title: " + actualTitle);
         } else {
-            System.out.println("Sayfa açılamadı veya title beklendiği gibi değil.");
-            System.out.println("Beklenen: " + expectedTitle);
-            System.out.println("Gerçek: " + actualTitle);
+            System.out.println("Sayfa açılamadı veya title beklendiği gibi değil." + "\nBeklenen: " + expectedTitle +"\nGerçek: " + actualTitle);
             Assert.fail("Title kontrolü başarısız.");
         }
     }

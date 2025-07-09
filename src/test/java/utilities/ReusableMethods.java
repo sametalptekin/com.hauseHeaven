@@ -10,6 +10,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.function.Function;
 
 public class ReusableMethods {
@@ -143,14 +144,4 @@ public class ReusableMethods {
 
         return element;
     }
-    public static void popuptanSec(String visibleText) {
-        String dynamicXPath = "//li[normalize-space()='" + visibleText + "']";
-        try {
-            Driver.getDriver().findElement(By.xpath(dynamicXPath)).click();
-        } catch (NoSuchElementException e) {
-            System.out.println("Element bulunamadı: " + visibleText);
-        }
-    }
-
-
 }

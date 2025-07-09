@@ -98,12 +98,11 @@ public class US_002 {
             softAssert.assertTrue(true);
         } catch (Exception e) {
             softAssert.fail();
+
         }
         softAssert.assertAll();
 
         Driver.quitDriver();
-
-
 
     }
 

@@ -8,11 +8,12 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US_002 {
-    userPages userPages= new userPages();
-    SoftAssert softAssert=new SoftAssert();
+
     @Test
     public void TC_001(){
         Driver.getDriver().get(ConfigReader.getProperty("url"));
+        userPages userPages= new userPages();
+        SoftAssert softAssert=new SoftAssert();
 
         softAssert.assertTrue(userPages.listingButton.isDisplayed());
         softAssert.assertTrue(userPages.homeButton.isDisplayed());
@@ -31,9 +32,12 @@ public class US_002 {
 
     }
 
+    @Test
     public void TC_002(){
 
         Driver.getDriver().get(ConfigReader.getProperty("url"));
+        userPages userPages= new userPages();
+        SoftAssert softAssert=new SoftAssert();
 
         try {
             userPages.homeButton.click();
@@ -95,6 +99,9 @@ public class US_002 {
         } catch (Exception e) {
             softAssert.fail();
         }
+        softAssert.assertAll();
+
+        Driver.quitDriver();
 
 
     }

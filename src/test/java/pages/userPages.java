@@ -25,12 +25,24 @@ public class userPages {
 
 
 
+
     /*
        ------------------------- BODY -------------------------
 
      */
 
     // body kısmındaki locate'lerimizi bu kısma ekleyelim.
+    @FindBy(xpath = "//a[@class='prt-view']")
+    public WebElement satilikDaire6button;
+
+    @FindBy(xpath = "//h3[@class='prt-price-fix']")
+    public WebElement satilikDaire6fiyat;
+
+    @FindBy(xpath = "//h3[text()='Satılık Daire']")
+    public WebElement getSatilikDaire6baslik;
+
+
+
 
 
 

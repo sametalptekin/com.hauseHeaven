@@ -1,14 +1,23 @@
 package tests.atilla;
 
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.userPages;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+
+
 public class US_006 {
+
+
+
 
     @Test
     public void TC_001(){
@@ -43,6 +52,8 @@ public class US_006 {
         userPages userPages = new userPages();
         userPages.listingButton.click();
         ReusableMethods.bekle(3);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire6button);
+        ReusableMethods.bekle(2);
         userPages.satilikDaire6button.click();
         ReusableMethods.bekle(3);
 

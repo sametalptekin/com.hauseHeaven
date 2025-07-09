@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class userPages {
 
-    public void userPages(){
+    public userPages(){
         PageFactory.initElements(utilities.Driver.getDriver(), this);
     }
 
@@ -18,6 +18,10 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='add-listing']")
     public WebElement signinButton;
+
+    @FindBy(xpath = "//a[normalize-space(text())='Listing']")
+    public WebElement listingButton;
+
 
 
 

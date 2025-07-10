@@ -159,7 +159,6 @@ public class US_015 {
         WebElement successAlert = Driver.getDriver().findElement(By.xpath("//*[@class='alert alert-success alert-dismissible']"));
         Assert.assertTrue(successAlert.isDisplayed());
         Driver.quitDriver();
-
     }
 }
 

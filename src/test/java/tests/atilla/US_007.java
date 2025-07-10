@@ -14,7 +14,10 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 
 public class US_007 {
     @Test
@@ -48,7 +51,56 @@ public class US_007 {
 
 
     }
+    @Test
+    public void TC_002(){
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        userPages userPages = new userPages();
+        userPages.signinButton.click();
+        userPages.loginFormEmail.sendKeys(ConfigReader.getProperty("user"));
+        userPages.loginFormPassword.sendKeys(ConfigReader.getProperty("user_pass"));
+        userPages.loginButton.click();
 
+        userPages.listingButton.click();
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire4button);
+        ReusableMethods.bekle(2);
+        userPages.satilikDaire4button.click();
+        ReusableMethods.waitForVisibility(userPages.reviewWriteArea, 10);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.reviewSubmitButton);
+        ReusableMethods.bekle(5);
+        userPages.reviewWriteArea.click();
+        userPages.reviewWriteArea.sendKeys("Mükemmel Bir İlan");
+        userPages.reviewSubmitButton.click();
+
+
+        ReusableMethods.waitForPageToLoad(5);
+        String expectedComment = "Mükemmel Bir İlan";
+        String expectedAuthor = "Team2 Test";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM, yyyy", Locale.ENGLISH);
+        String expectedDate = LocalDate.now().format(formatter).toLowerCase();
+
+        String actualComment = userPages.commentText.getText().trim();
+        String actualAuthor = userPages.authorName.getText().replace("\"", "").trim(); // çift tırnakları sil
+        String actualDate = userPages.commentDate.getText().replace("\"", "").trim().toLowerCase();
+
+        if (actualComment.equals(expectedComment) && actualAuthor.equals(expectedAuthor) && actualDate.equals(expectedDate)) {
+            System.out.println("Yorum başarılı şekilde eklendi!");
+        } else {
+            System.err.println("Yorum doğrulaması başarısız!");
+
+            if (!actualComment.equals(expectedComment)) {
+                System.err.println("Beklenen yorum: " + expectedComment + " | Gerçek: " + actualComment);
+            }
+
+            if (!actualAuthor.equals(expectedAuthor)) {
+                System.err.println("Beklenen yazar: " + expectedAuthor + " | Gerçek: " + actualAuthor);
+            }
+
+            if (!actualDate.equals(expectedDate)) {
+                System.err.println("Beklenen tarih: " + expectedDate + " | Gerçek: " + actualDate);
+            }
+        }
+
+    }
     @AfterTest
     public void tearDown() {
         Driver.quitDriver();

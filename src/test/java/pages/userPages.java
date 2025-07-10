@@ -38,7 +38,7 @@ public class userPages {
     @FindBy(xpath = "//h3[@class='prt-price-fix']")
     public WebElement satilikDaire6fiyat;
 
-    @FindBy(xpath = "//h3[contains(text(), 'Satılık Daire')]")
+    @FindBy(xpath = "//h3[contains(text(), 'Ego Dominus Tuus')]")
     public WebElement getSatilikDaire6baslik;
 
     @FindBy(xpath = "//input[@placeholder='Search for a location']")
@@ -59,10 +59,32 @@ public class userPages {
     @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
     public WebElement saveAlert;
 
+    @FindBy(xpath = "//*[@class='form-control ht-80']")
+    public WebElement reviewWriteArea;
+    @FindBy(xpath = "//div[@class='comment-text']/p")
+    public WebElement commentText;
+    @FindBy(xpath = "//h4[@class='author-name']")
+    public WebElement authorName;
+    @FindBy(xpath = "//div[@class='comment-date']")
+    public WebElement commentDate;
+    @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
+    public WebElement reviewSubmitButton;
+    @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/satilik-daire-4']")
+    public WebElement satilikDaire4button;
 
 
 
 
+    /*
+       ------------------------- LOGIN -------------------------
+    */
+
+    @FindBy(xpath = "//*[@id='email']")
+    public WebElement loginFormEmail;
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement loginFormPassword;
+    @FindBy(xpath = "//*[@class='btn btn-md full-width btn-theme-light-2 rounded']")
+    public WebElement loginButton;
 
 
     /*

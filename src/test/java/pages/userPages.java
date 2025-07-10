@@ -148,8 +148,14 @@ public class userPages {
     @FindBy(xpath = "//span[@id='select2-minprice-container']")
     public WebElement minPrice;
 
+    @FindBy(xpath = "//span[@id='select2-maxprice-container']")
+    public WebElement maxPrice;
+
     @FindBy(xpath ="//span[@id='select2-ptypes-container']")
     public WebElement propertyType;
+
+    @FindBy(xpath ="//span[@id='select2-select-bedroom-container']" )
+    public WebElement bedRooms;
 
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
@@ -175,7 +181,8 @@ public class userPages {
     @FindBy(xpath = "//h2[contains(text(),'Login')]")
     public WebElement signinPageLoginYazisi;
 
-
+    @FindBy(xpath = "//span[@class='listing-location']")
+    public WebElement ilanLocation;
 
 
     /*

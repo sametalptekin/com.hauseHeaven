@@ -3,6 +3,9 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import java.util.List;
+
+import java.awt.*;
 
 
 public class userPages {
@@ -159,6 +162,42 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
+
+    @FindBy(xpath = "//*[@data-slick-index='4']")
+    public List<WebElement> projeSayisi;
+
+    @FindBy(xpath = "//*[@class=\"fr-position\"]")
+    public WebElement agentsProperties;
+
+    @FindBy(xpath = "(//a[@class='prt-view'])[1]")
+    public WebElement firstAgent;
+
+    @FindBy(xpath = "//*[@class=\"block-wrap\"]")
+    public WebElement agentInfo;
+
+    @FindBy (xpath = "//*[@class=\"col-lg-5 col-md-5\"]")
+    public WebElement contactInfo;
+
+    @FindBy(xpath = "//*[@name=\"name\"]")
+    public WebElement contactName;
+
+    @FindBy(xpath = "(//*[@name=\"email\"])[1]")
+    public WebElement contactEmail;
+
+    @FindBy(xpath = "//*[@name=\"subject\"]")
+    public WebElement contactSubject;
+
+    @FindBy(xpath = "//*[@name=\"phone\"]")
+    public WebElement contactPhone;
+
+    @FindBy(xpath = "//*[@name=\"content\"]")
+    public WebElement contactMessage;
+
+    @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
+    public WebElement sendMessageButton;
+
+    @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
+    public WebElement sendMessageSuccess;
 
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;

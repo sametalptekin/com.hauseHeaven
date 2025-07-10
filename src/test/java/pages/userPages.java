@@ -169,6 +169,9 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"block-wrap\"]")
     public WebElement agentInfo;
 
+    @FindBy (xpath = "//*[@class=\"col-lg-5 col-md-5\"]")
+    public WebElement contactInfo;
+
 
 
 

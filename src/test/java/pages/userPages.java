@@ -154,6 +154,29 @@ public class userPages {
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
 
+    @FindBy(xpath = "//h1[contains(text(),'Properties')]")
+    public WebElement propertyPagePropertyYazisi;
+
+    @FindBy(xpath = "//h2[contains(text(),'All projects')]")
+    public WebElement projectsPageProjectsYazisi;
+
+    @FindBy(xpath = "//h1[contains(text(),'All Agents')]")
+    public WebElement agentsPageAllagentsYazisi;
+
+    @FindBy(xpath ="//h1[contains(text(),'Blog')]" )
+    public WebElement blogPageBlogYazisi;
+
+    @FindBy(xpath ="//h1[contains(text(),'Contact')]" )
+    public WebElement contactPageContactYazisi;
+
+    @FindBy(xpath = "//h2[contains(text(),'Register')]")
+    public WebElement signupPageRegisterYazisi;
+
+    @FindBy(xpath = "//h2[contains(text(),'Login')]")
+    public WebElement signinPageLoginYazisi;
+
+
+
 
     /*
        ------------------------- FOOTER -------------------------

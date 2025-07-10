@@ -98,20 +98,41 @@ public class userPages {
     @FindBy(xpath = "//a[normalize-space(text())='Listing']")
     public WebElement listingButton;
 
+    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Home')]")
+    public WebElement homeButton;
+
+    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Projects')]")
+    public WebElement projectsButton;
+
+    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Agents')]")
+    public WebElement agentsButton;
+
+    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Blog')]")
+    public WebElement blogButton;
+
+    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Contact')]")
+    public WebElement contactButton;
+
+    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Sign Up')]")
+    public WebElement signupButton;
+
+    @FindBy(xpath = "//a[@class='text-success']")
+    public WebElement addPropertyButton;
+
+    @FindBy(xpath = "//img[@class='logo']")
+    public WebElement logoButton;
+
     @FindBy(xpath = "(//*[@class='login-item'])[1]")
     public WebElement usernameButton;
 
     @FindBy(xpath = "(//*[@class='login-item'])[2]")
     public WebElement logoutButton;
 
-
-
     /*
        ------------------------- BODY -------------------------
 
      */
 
-    // body kısmındaki locate'lerimizi bu kısma ekleyelim.
     @FindBy(xpath = "//a[@class='prt-view']")
     public WebElement satilikDaire6button;
 
@@ -132,10 +153,6 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
-
-
-
-
 
 
     /*

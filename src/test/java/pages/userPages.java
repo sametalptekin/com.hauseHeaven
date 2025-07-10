@@ -3,6 +3,9 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import java.util.List;
+
+import java.awt.*;
 
 
 public class userPages {
@@ -153,6 +156,10 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
+
+    @FindBy(xpath = "//*[@data-slick-index='4']")
+    public List<WebElement> projeSayisi;
+
 
 
     /*

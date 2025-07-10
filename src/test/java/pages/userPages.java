@@ -160,6 +160,9 @@ public class userPages {
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;
 
+    @FindBy(xpath = "//*[@class=\"fr-position\"]")
+    public WebElement agentsProperties;
+
 
 
     /*

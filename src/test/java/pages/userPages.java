@@ -38,7 +38,7 @@ public class userPages {
     @FindBy(xpath = "//h3[@class='prt-price-fix']")
     public WebElement satilikDaire6fiyat;
 
-    @FindBy(xpath = "//h3[text()='Satılık Daire']")
+    @FindBy(xpath = "//h3[contains(text(), 'Satılık Daire')]")
     public WebElement getSatilikDaire6baslik;
 
     @FindBy(xpath = "//input[@placeholder='Search for a location']")
@@ -52,6 +52,13 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
+
+    @FindBy(xpath = "//*[@class='btn btn-likes add-to-wishlist']")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
+    public WebElement saveAlert;
+
 
 
 

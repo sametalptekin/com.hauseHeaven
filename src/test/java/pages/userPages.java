@@ -163,6 +163,12 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"fr-position\"]")
     public WebElement agentsProperties;
 
+    @FindBy(xpath = "(//a[@class='prt-view'])[1]")
+    public WebElement firstAgent;
+
+    @FindBy(xpath = "//*[@class=\"block-wrap\"]")
+    public WebElement agentInfo;
+
 
 
     /*

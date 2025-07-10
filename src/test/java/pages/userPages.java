@@ -242,20 +242,6 @@ public class userPages {
     @FindBy(xpath = "//span[@class='listing-location']")
     public WebElement ilanLocation;
 
-
-
-    /*
-       ------------------------- LOGIN -------------------------
-    */
-
-    @FindBy(xpath = "//*[@id='email']")
-    public WebElement loginFormEmail;
-    @FindBy(xpath = "//*[@id='password']")
-    public WebElement loginFormPassword;
-    @FindBy(xpath = "//*[@class='btn btn-md full-width btn-theme-light-2 rounded']")
-    public WebElement loginButton;
-
-
     /*
        ------------------------- FOOTER -------------------------
      */

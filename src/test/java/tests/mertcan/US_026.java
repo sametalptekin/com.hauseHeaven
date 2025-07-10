@@ -1,5 +1,6 @@
 package tests.mertcan;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -51,7 +52,45 @@ public class US_026 {
         Assert.assertTrue(userPages.contactInfo.isDisplayed());
         Driver.quitDriver();
 
-
     }
 
+    Faker faker = new Faker();
+
+    @Test
+    public void TC_003(){
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.bekle(2);
+        userPages userPages=new userPages();
+
+        userPages.signinButton.click();
+
+        userPages.loginFormEmail.sendKeys(ConfigReader.getProperty("user"));
+        userPages.loginFormPassword.sendKeys(ConfigReader.getProperty("user_pass"));
+        userPages.loginButton.click();
+
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(userPages.logoutButton.isDisplayed());
+
+        userPages.contactButton.click();
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0, 200);");
+        ReusableMethods.bekle(1);
+
+
+        userPages.contactName.sendKeys(faker.name().name());
+        userPages.contactEmail.sendKeys(faker.internet().emailAddress());
+        userPages.contactSubject.sendKeys(faker.superhero().name());
+        userPages.contactPhone.sendKeys(faker.phoneNumber().phoneNumber());
+        userPages.contactMessage.sendKeys(faker.lorem().sentence());
+        userPages.sendMessageButton.click();
+
+        ReusableMethods.bekle(8);
+        Assert.assertTrue(userPages.sendMessageSuccess.isDisplayed());
+
+        ReusableMethods.bekle(1);
+        Driver.quitDriver();
+
+
+    }
 }

@@ -172,8 +172,26 @@ public class userPages {
     @FindBy (xpath = "//*[@class=\"col-lg-5 col-md-5\"]")
     public WebElement contactInfo;
 
+    @FindBy(xpath = "//*[@name=\"name\"]")
+    public WebElement contactName;
 
+    @FindBy(xpath = "(//*[@name=\"email\"])[1]")
+    public WebElement contactEmail;
 
+    @FindBy(xpath = "//*[@name=\"subject\"]")
+    public WebElement contactSubject;
+
+    @FindBy(xpath = "//*[@name=\"phone\"]")
+    public WebElement contactPhone;
+
+    @FindBy(xpath = "//*[@name=\"content\"]")
+    public WebElement contactMessage;
+
+    @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
+    public WebElement sendMessageButton;
+
+    @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
+    public WebElement sendMessageSuccess;
 
 
     /*

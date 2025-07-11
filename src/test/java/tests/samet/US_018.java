@@ -82,6 +82,29 @@ public class US_018 {
         Driver.quitDriver();
     }
 
+    @Test
+    public void TC_002(){
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        userPages userPages = new userPages();
+
+        WebElement howItWorks = Driver.getDriver().findElement(By.xpath("(//*[@class='sec-heading center'])[1]"));
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", howItWorks);
+        ReusableMethods.bekle(1);
+        Assert.assertTrue(howItWorks.isDisplayed());
+
+        WebElement  evaluateProperty = Driver.getDriver().findElement(By.xpath("(//*[@class='middle-icon-features-content'])[1]"));
+        Assert.assertTrue(evaluateProperty.isDisplayed());
+
+        WebElement  meetYourAgent = Driver.getDriver().findElement(By.xpath("(//*[@class='middle-icon-features-content'])[2]"));
+        Assert.assertTrue(meetYourAgent.isDisplayed());
+
+        WebElement  closeTheDeal = Driver.getDriver().findElement(By.xpath("(//*[@class='middle-icon-features-content'])[3]"));
+        Assert.assertTrue(closeTheDeal.isDisplayed());
+
+        Driver.quitDriver();
+    }
+
 }
 
 

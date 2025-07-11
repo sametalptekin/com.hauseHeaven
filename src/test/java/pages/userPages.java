@@ -193,6 +193,10 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
+    @FindBy (xpath = "//*[@jsan=\"7.address\"]")
+    public WebElement mapAdress;
+
+
 
     /*
        ------------------------- FOOTER -------------------------

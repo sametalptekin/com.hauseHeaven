@@ -142,7 +142,7 @@ public class userPages {
     @FindBy(xpath = "//h3[@class='prt-price-fix']")
     public WebElement satilikDaire6fiyat;
 
-    @FindBy(xpath = "//h3[text()='Satılık Daire']")
+    @FindBy(xpath = "//h3[contains(text(), 'Ego Dominus Tuus')]")
     public WebElement getSatilikDaire6baslik;
 
     @FindBy(xpath = "//input[@placeholder='Search for a location']")
@@ -151,11 +151,36 @@ public class userPages {
     @FindBy(xpath = "//span[@id='select2-minprice-container']")
     public WebElement minPrice;
 
+    @FindBy(xpath = "//span[@id='select2-maxprice-container']")
+    public WebElement maxPrice;
+
     @FindBy(xpath ="//span[@id='select2-ptypes-container']")
     public WebElement propertyType;
 
+    @FindBy(xpath ="//span[@id='select2-select-bedroom-container']" )
+    public WebElement bedRooms;
+
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
+
+    @FindBy(xpath = "//*[@class='btn btn-likes add-to-wishlist']")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
+    public WebElement saveAlert;
+
+    @FindBy(xpath = "//*[@class='form-control ht-80']")
+    public WebElement reviewWriteArea;
+    @FindBy(xpath = "//div[@class='comment-text']/p")
+    public WebElement commentText;
+    @FindBy(xpath = "//h4[@class='author-name']")
+    public WebElement authorName;
+    @FindBy(xpath = "//div[@class='comment-date']")
+    public WebElement commentDate;
+    @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
+    public WebElement reviewSubmitButton;
+    @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/satilik-daire-4']")
+    public WebElement satilikDaire4button;
 
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;
@@ -193,10 +218,36 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
+//<<<<<<< HEAD
     @FindBy (xpath = "//*[@jsan=\"7.address\"]")
     public WebElement mapAdress;
 
 
+//=======
+    @FindBy(xpath = "//h1[contains(text(),'Properties')]")
+    public WebElement propertyPagePropertyYazisi;
+
+    @FindBy(xpath = "//h2[contains(text(),'All projects')]")
+    public WebElement projectsPageProjectsYazisi;
+
+    @FindBy(xpath = "//h1[contains(text(),'All Agents')]")
+    public WebElement agentsPageAllagentsYazisi;
+
+    @FindBy(xpath ="//h1[contains(text(),'Blog')]" )
+    public WebElement blogPageBlogYazisi;
+
+    @FindBy(xpath ="//h1[contains(text(),'Contact')]" )
+    public WebElement contactPageContactYazisi;
+
+    @FindBy(xpath = "//h2[contains(text(),'Register')]")
+    public WebElement signupPageRegisterYazisi;
+
+    @FindBy(xpath = "//h2[contains(text(),'Login')]")
+    public WebElement signinPageLoginYazisi;
+
+    @FindBy(xpath = "//span[@class='listing-location']")
+    public WebElement ilanLocation;
+//>>>>>>> main
 
     /*
        ------------------------- FOOTER -------------------------

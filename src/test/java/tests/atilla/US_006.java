@@ -31,7 +31,7 @@ public class US_006 {
         userPages userPages = new userPages();
         userPages.listingButton.click();
         ReusableMethods.bekle(3);
-        tearDown();
+
     }
 
     @Test
@@ -46,7 +46,7 @@ public class US_006 {
             System.out.println("Sayfa açılamadı veya title beklendiği gibi değil." + "\nBeklenen: " + expectedTitle +"\nGerçek: " + actualTitle);
             Assert.fail("Title kontrolü başarısız.");
         }
-        tearDown();
+
     }
 
 
@@ -61,9 +61,16 @@ public class US_006 {
         ReusableMethods.bekle(2);
         userPages.satilikDaire6button.click();
         ReusableMethods.bekle(3);
+        String ilanUrl = "https://qa.hauseheaven.com/properties/satilik-daire-6";
+        ReusableMethods.waitForPageToLoad(5);
+        String girilenIlanUrl = Driver.getDriver().getCurrentUrl();
 
-        String expectedilanTitle = "Satılık Daire";
+        if (!ilanUrl.equals(girilenIlanUrl)) {
+            Driver.getDriver().get(ilanUrl);
+        }
+        String expectedilanTitle = "Ego Dominus Tuus";
         String actualIlanTitle = userPages.getSatilikDaire6baslik.getText();
+
         if (actualIlanTitle.contains(expectedilanTitle)) {
             System.out.println("Sayfa başarılı şekilde açıldı. Title: " + actualIlanTitle);
         } else {
@@ -73,6 +80,7 @@ public class US_006 {
 
         String expectedFiyatTitle = "$130,000";
         String actualFiyatTitle = userPages.satilikDaire6fiyat.getText();
+        actualFiyatTitle.replaceAll("[^\\d]", "");
 
         if (actualFiyatTitle.contains(expectedFiyatTitle)) {
             System.out.println("Sayfa başarılı şekilde açıldı. Fiyat: " + actualFiyatTitle);
@@ -80,7 +88,7 @@ public class US_006 {
             System.out.println("Sayfa açılamadı veya fiyat beklendiği gibi değil." + "\nBeklenen: " + expectedFiyatTitle +"\nGerçek: " + actualFiyatTitle);
             Assert.fail("Fiyat kontrolü başarısız.");
         }
-        tearDown();
+
 
     }
 

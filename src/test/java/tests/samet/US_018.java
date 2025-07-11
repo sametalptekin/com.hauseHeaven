@@ -2,6 +2,7 @@ package tests.samet;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -11,44 +12,76 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.io.IOException;
+import java.util.List;
+
 public class US_018 {
 
     @Test
-    public void TC_001(){
+    public void TC_001() {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         userPages userPages = new userPages();
 
-        WebElement filterSearchBox = Driver.getDriver().findElement(By.xpath("//*[@class='hero-search-wrap']"));
-        Assert.assertTrue(filterSearchBox.isDisplayed());
+        String locationData = "Denver";
+        String minPriceData = "500";
+        String maxPriceData = "50000";
+        String propertyTypeData = "Apartment";
+        String bedRoomsData = "1";
+
+        userPages.locationInput.sendKeys(locationData);
         ReusableMethods.bekle(1);
-
-        userPages.locationInput.sendKeys("Denver");
+        userPages.minPrice.click();
+        ReusableMethods.popuptanSec(minPriceData);
         ReusableMethods.bekle(1);
-
-        WebElement minPriceDdMenu = Driver.getDriver().findElement(By.xpath("//*[@id='select2-minprice-container']"));
-
-        Select select = new Select(minPriceDdMenu);
-        select.selectByValue("500");
-
-        Select select1 = new Select(userPages.maxPrice);
-        select1.selectByIndex(2);
-
-        Select select2 = new Select(userPages.propertyType);
-        select2.selectByIndex(0);
-
-        Select select3 = new Select(userPages.bedRooms);
-        select3.selectByIndex(0);
+        userPages.maxPrice.click();
+        ReusableMethods.popuptanSec(maxPriceData);
+        ReusableMethods.bekle(1);
+        userPages.propertyType.click();
+        ReusableMethods.popuptanSec(propertyTypeData);
+        ReusableMethods.bekle(1);
+        userPages.bedRooms.click();
+        ReusableMethods.popuptanSec(bedRoomsData);
+        ReusableMethods.bekle(1);
 
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0, 100);");
         ReusableMethods.bekle(1);
 
         userPages.filtreSubmit.click();
+        ReusableMethods.bekle(1);
 
-        String expectedResult = userPages.locationInput.getText();
-        String actualResult = userPages.ilanLocation.getText();
+        js.executeScript("window.scrollBy(0, 100);");
+        ReusableMethods.bekle(1);
 
-        Assert.assertEquals(actualResult,expectedResult);
+        List<WebElement> locations = Driver.getDriver().findElements(By.xpath("//*[@class='listing-locate']"));
+        List<WebElement> prices = Driver.getDriver().findElements(By.xpath("//*[@class='listing-card-info-price']"));
+        List<WebElement> bedRooms = Driver.getDriver().findElements(By.xpath("(//div[@class='listing-card-info-icon'])[1]"));
+
+        int minPrice = Integer.parseInt(minPriceData);
+        boolean filtreHatasiVar = false;
+
+        for (int i = 0; i < locations.size(); i++) {
+            String loc = locations.get(i).getText().toLowerCase();
+
+            if (!loc.contains(locationData.toLowerCase())) {
+                System.out.println("Hata! Beklenmeyen Lokasyon Bulundu: " + loc);
+                filtreHatasiVar = true;
+            }
+        }
+
+        if (filtreHatasiVar) {
+            try {
+                String screenshotPath = ReusableMethods.getScreenshot("TC_004_FiltreHatasi");
+                System.out.println("Ekran görüntüsü alındı: " + screenshotPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        Assert.assertFalse(filtreHatasiVar, "Bazı ilanlar filtre kriterlerine uymuyor.");
         Driver.quitDriver();
     }
+
 }
+
+

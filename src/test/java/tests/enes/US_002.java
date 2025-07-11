@@ -200,5 +200,29 @@ public class US_002 {
         Driver.quitDriver();
 
     }
+    @Test
+    public void TC_005(){
+
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        userPages userPages=new userPages();
+        SoftAssert softAssert=new SoftAssert();
+
+        if (userPages.signinButton.isDisplayed()){
+            softAssert.assertTrue(userPages.listingButton.isDisplayed());
+            softAssert.assertTrue(userPages.homeButton.isDisplayed());
+            softAssert.assertTrue(userPages.projectsButton.isDisplayed());
+            softAssert.assertTrue(userPages.agentsButton.isDisplayed());
+            softAssert.assertTrue(userPages.blogButton.isDisplayed());
+            softAssert.assertTrue(userPages.contactButton.isDisplayed());
+            softAssert.assertTrue(userPages.signupButton.isDisplayed());
+            softAssert.assertTrue(userPages.addPropertyButton.isDisplayed());
+            softAssert.assertTrue(userPages.signinButton.isDisplayed());
+            softAssert.assertTrue(userPages.logoButton.isDisplayed());
+
+            softAssert.assertAll();
+        }else System.out.println("Kullanici giris yapmis,giris yapilmadan test edilmeli");
+
+        Driver.quitDriver();
+    }
 
 }

@@ -1,7 +1,10 @@
 package tests.mertcan;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.userPages;
@@ -88,6 +91,49 @@ public class US_026 {
         ReusableMethods.bekle(8);
         Assert.assertTrue(userPages.sendMessageSuccess.isDisplayed());
 
+        ReusableMethods.bekle(1);
+        Driver.quitDriver();
+    }
+
+
+    @Test
+    public void TC_004() {
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.bekle(2);
+        userPages userPages = new userPages();
+
+        userPages.signinButton.click();
+
+        userPages.loginFormEmail.sendKeys(ConfigReader.getProperty("user"));
+        userPages.loginFormPassword.sendKeys(ConfigReader.getProperty("user_pass"));
+        userPages.loginButton.click();
+
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(userPages.logoutButton.isDisplayed());
+
+        userPages.contactButton.click();
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0, 200);");
+        ReusableMethods.bekle(1);
+
+        WebDriver driver = Driver.getDriver();
+        WebElement adresElementi = driver.findElement(By.xpath("//h4[text()='Reach Us']/parent::div"));
+        String fullText = adresElementi.getText();
+        String adres = fullText.split("\n")[1];
+
+        ReusableMethods.bekle(1);
+
+
+
+
+        js.executeScript("window.scrollBy(0, 300);");
+        ReusableMethods.bekle(2);
+
+        //BAKILACAK!!!!!!!!!!!!
+
+
+        Assert.assertTrue(userPages.mapAdress.getText().toLowerCase().contains("4655 Wild Indigo St"));
         ReusableMethods.bekle(1);
         Driver.quitDriver();
 

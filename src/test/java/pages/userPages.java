@@ -218,6 +218,12 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
+//<<<<<<< HEAD
+    @FindBy (xpath = "//*[@jsan=\"7.address\"]")
+    public WebElement mapAdress;
+
+
+//=======
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 
@@ -241,6 +247,7 @@ public class userPages {
 
     @FindBy(xpath = "//span[@class='listing-location']")
     public WebElement ilanLocation;
+//>>>>>>> main
 
     /*
        ------------------------- FOOTER -------------------------

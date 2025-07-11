@@ -86,7 +86,7 @@ public class US_026 {
         userPages.contactSubject.sendKeys(faker.superhero().name());
         userPages.contactPhone.sendKeys(faker.phoneNumber().phoneNumber());
         userPages.contactMessage.sendKeys(faker.lorem().sentence());
-        userPages.sendMessageButton.click();
+        userPages.sendMessageBttn.click();
 
         ReusableMethods.bekle(8);
         Assert.assertTrue(userPages.sendMessageSuccess.isDisplayed());
@@ -114,29 +114,23 @@ public class US_026 {
         userPages.contactButton.click();
 
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy(0, 200);");
+        js.executeScript("window.scrollBy(0, 180);");
         ReusableMethods.bekle(1);
 
-        WebDriver driver = Driver.getDriver();
-        WebElement adresElementi = driver.findElement(By.xpath("//h4[text()='Reach Us']/parent::div"));
-        String fullText = adresElementi.getText();
-        String adres = fullText.split("\n")[1];
+        WebDriver driver = Driver.getDriver(); // Eğer yukarıda varsa tekrar yazmana gerek yok
 
-        ReusableMethods.bekle(1);
-
-
-
+        String fullText = userPages.reachUsElement.getText();
+        String adres = fullText.split("\n")[1].trim();
 
         js.executeScript("window.scrollBy(0, 300);");
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
 
-        //BAKILACAK!!!!!!!!!!!!
+        // Harita üzerindeki adres
 
+        String mapAdress = userPages.mapAddressElement.getText().trim();
 
-        Assert.assertTrue(userPages.mapAdress.getText().toLowerCase().contains("4655 Wild Indigo St"));
+        Assert.assertTrue(mapAdress.contains(adres));
         ReusableMethods.bekle(1);
         Driver.quitDriver();
-
-
     }
 }

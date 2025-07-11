@@ -236,13 +236,10 @@ public class userPages {
     @FindBy(xpath = "//*[@name=\"content\"]")
     public WebElement contactMessage;
 
-<<<<<<< HEAD
+
       @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
-    public WebElement sendMessageButton;
-=======
-    @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
     public WebElement sendMessageBttn;
->>>>>>> main
+
 
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;

@@ -182,8 +182,29 @@ public class userPages {
     public WebElement commentDate;
     @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
     public WebElement reviewSubmitButton;
-    @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/satilik-daire-4']")
+    @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/eryaman-kasmir-evleri']")
     public WebElement satilikDaire4button;
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement isimKutusu;
+
+    @FindBy(xpath = "//input[@name='phone']")
+    public WebElement telefonKutusu;
+
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement emailKutusu;
+
+    @FindBy(xpath = "//input[@name='subject']")
+    public WebElement konuKutusu;
+
+    @FindBy(xpath = "//textarea[@name='content']")
+    public WebElement mesajAlani;
+
+    @FindBy(xpath = "//textarea[@name='content']/ancestor::form//button[@type='submit']")
+    public WebElement sendMessageButton;
+
+    @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
+    public WebElement successMessageAlert;
+
 
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;

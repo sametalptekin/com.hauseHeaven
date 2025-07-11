@@ -100,6 +100,30 @@ public class US_007 {
             }
         }
 
+
+    }
+    @Test
+    public void TC_003(){
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        userPages userPages = new userPages();
+        userPages.listingButton.click();
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire6button);
+        ReusableMethods.bekle(3);
+        userPages.satilikDaire6button.click();
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.sendMessageButton);
+        ReusableMethods.bekle(3);
+        userPages.isimKutusu.sendKeys("Atilla Test");
+        userPages.telefonKutusu.sendKeys("05551234567");
+        userPages.emailKutusu.sendKeys("atilla@example.com");
+        userPages.mesajAlani.sendKeys("Bu bir test mesajıdır.");
+        userPages.sendMessageButton.click();
+        ReusableMethods.waitForVisibility(userPages.successMessageAlert,5);
+
+        Assert.assertTrue(userPages.successMessageAlert.isDisplayed(), "Başarı mesajı görünmüyor!");
+        Assert.assertTrue(userPages.successMessageAlert.getText().contains("Send consult successfully!"),
+                "Mesaj içeriği beklenenden farklı!");
+
+
     }
     @AfterTest
     public void tearDown() {

@@ -237,17 +237,21 @@ public class userPages {
     public WebElement contactMessage;
 
     @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
-    public WebElement sendMessageButton;
+    public WebElement sendMessageBttn;
 
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
-//<<<<<<< HEAD
     @FindBy (xpath = "//*[@jsan=\"7.address\"]")
     public WebElement mapAdress;
 
+    @FindBy(xpath = "//h4[text()='Reach Us']/parent::div")
+    public WebElement reachUsElement;
 
-//=======
+    @FindBy(xpath = "//div[contains(text(), '4655 Wild Indigo St')]")
+    public WebElement mapAddressElement;
+
+
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 

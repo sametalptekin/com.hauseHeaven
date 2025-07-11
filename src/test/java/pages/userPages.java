@@ -131,6 +131,9 @@ public class userPages {
     @FindBy(xpath = "(//*[@class='login-item'])[2]")
     public WebElement logoutButton;
 
+    @FindBy(xpath = "//img[@alt='2468 Pine Street']")
+    public WebElement ilan1Gorsel;
+
     /*
        ------------------------- BODY -------------------------
 

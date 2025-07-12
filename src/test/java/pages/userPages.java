@@ -277,6 +277,8 @@ public class userPages {
     @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h3[contains(@class, 'prt-price-fix')]")
     public WebElement coastalHarmonyEstatesfiyat;
 
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h1[contains(@class, 'h3')]")
+    public WebElement coastalHarmonyEstatesbaslik;
 
 
     /*

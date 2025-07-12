@@ -53,7 +53,7 @@ public class US_008 {
         String actualIlanTipi = userPages.coastalHarmonyEstatesilanTipi.getText().trim();
         Assert.assertEquals(actualIlanTipi, expectedIlanTipi, "İlan tipi eşleşmiyor!");
 
-        String actualBaslik = Driver.getDriver().findElement(By.xpath("//div[contains(@class, 'property_block_wrap')]//h1[contains(@class, 'h3')]")).getText().trim();
+        String actualBaslik = userPages.coastalHarmonyEstatesbaslik.getText().replace("\"", "").trim();
         Assert.assertEquals(actualBaslik, expectedBaslik, "Başlık eşleşmiyor!");
 
         // Konum doğrulama

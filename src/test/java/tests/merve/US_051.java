@@ -1,16 +1,17 @@
 package tests.merve;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import pages.userPages;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US_014 {
+public class US_051 {
+
+
+
 
     @Test
     public void loginTesti(){
@@ -48,6 +49,9 @@ public class US_014 {
         userPages.loginButonu.click();
         ReusableMethods.bekle(2);
 
+        // 7- profil sayfası görünür mü kontrol edilir ve tıklanır
+        softAssert.assertTrue(userPages.profilButonu.isDisplayed());
+        userPages.profilButonu.click();
 
 
 
@@ -55,13 +59,12 @@ public class US_014 {
 
         Driver.quitDriver();
 
-
-
-
     }
 
+
+
     @Test
-    public void ilanEklemeTesti(){
+    public void sayfaErisimTesti(){
         // 1- "https://qa.househeaven.com/" adresine gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
 
@@ -95,75 +98,14 @@ public class US_014 {
         userPages.loginButonu.click();
         ReusableMethods.bekle(2);
 
-        // 7- ilan ekleme butonuna tıklama
+        // 7- profil sayfası görünür mü kontrol edilir ve tıklanır
+        softAssert.assertTrue(userPages.profilButonu.isDisplayed());
+        userPages.profilButonu.click();
 
-        userPages.addPropertyButonu.click();
+        // 8- yeni kredi satıl alma sayfasına geçiş
 
+        userPages.buyCreditsButonu.click();
         ReusableMethods.bekle(2);
-        // 8- ilan formu title doldurma
-
-        userPages.ilanFormTitle.sendKeys(ConfigReader.getProperty("ilanTitle"));
-        ReusableMethods.bekle(2);
-
-        // 9 - ilan formu Description doldurma
-        userPages.ilanFormDescription.sendKeys(ConfigReader.getProperty("description"));
-        ReusableMethods.bekle(2);
-
-        // 10 - fiyat- konum vs gibi detaylı alanların doldurulması
-
-        userPages.ilanFormContent.sendKeys(ConfigReader.getProperty("content"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormPublicLocation.sendKeys(ConfigReader.getProperty("publicLocation"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormBedrooms.sendKeys(ConfigReader.getProperty("bedrooms"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormBathroom.sendKeys(ConfigReader.getProperty("bathroom"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormFloors.sendKeys(ConfigReader.getProperty("floors"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormSquare.sendKeys(ConfigReader.getProperty("square"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormPrice.sendKeys(ConfigReader.getProperty("price"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormFacilities.sendKeys(ConfigReader.getProperty("facilities"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormDistance.sendKeys(ConfigReader.getProperty("distance"));
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormWifiButonu.click();
-        ReusableMethods.bekle(2);
-
-        userPages.ilanFormGardenButonu.click();
-        ReusableMethods.bekle(2);
-
-
-
-
-
-        userPages.ilanFormCategoryButonu.click();
-        userPages.CategoryButonu.sendKeys(ConfigReader.getProperty("categoriButonu"));
-        ReusableMethods.bekle(2);
-
-        userPages.CategoryButonu.sendKeys(Keys.ENTER);
-        ReusableMethods.bekle(1);
-
-        userPages.ilanSaveAndExitButonu.click();
-        ReusableMethods.bekle(2);
-
-
-
-
-
-
-
 
 
 
@@ -181,8 +123,5 @@ public class US_014 {
         softAssert.assertAll();
 
         Driver.quitDriver();
-
-
     }
-
 }

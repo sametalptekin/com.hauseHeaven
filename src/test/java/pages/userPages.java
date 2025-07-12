@@ -173,16 +173,22 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='form-control ht-80']")
     public WebElement reviewWriteArea;
+
     @FindBy(xpath = "//div[@class='comment-text']/p")
     public WebElement commentText;
+
     @FindBy(xpath = "//h4[@class='author-name']")
     public WebElement authorName;
+
     @FindBy(xpath = "//div[@class='comment-date']")
     public WebElement commentDate;
+
     @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
     public WebElement reviewSubmitButton;
+
     @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/eryaman-kasmir-evleri']")
     public WebElement satilikDaire4button;
+
     @FindBy(xpath = "//input[@id='name']")
     public WebElement isimKutusu;
 
@@ -203,7 +209,6 @@ public class userPages {
 
     @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
     public WebElement successMessageAlert;
-
 
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;
@@ -266,7 +271,13 @@ public class userPages {
     public WebElement ilanLocation;
 
     @FindBy(xpath = "//img[@alt='Coastal Harmony Estates']/parent::a\n")
-    public  WebElement coastalHarmonyEstates;
+    public WebElement coastalHarmonyEstates;
+
+    @FindBy(xpath = "//*[@class='cn-info-content'][1]")
+    public WebElement reachUsElement;
+
+    @FindBy(xpath = "//*[@class='place-card place-card-large']")
+    public WebElement mapAddressElement;
 
 
     /*
@@ -280,8 +291,6 @@ public class userPages {
        -------------------------ILAN-PROFİL-USTMENU-------------------------
 
      */
-    @FindBy(xpath = "//*[@class='add-listing']")
-    public WebElement signinButton;
 
     @FindBy(xpath = "//*[@class='add-listing']")
     public WebElement signInButton;
@@ -364,7 +373,6 @@ public class userPages {
     @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//span[contains(@class, 'prt-types')]")
     public WebElement coastalHarmonyEstatesilanTipi;
 
-
     @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//div[contains(@class,'prt-detail-title-desc')]/span[2]")
     public WebElement coastalHarmonyEstateskonum;
 
@@ -380,6 +388,11 @@ public class userPages {
     @FindBy (xpath = "//*[@id='multiple-upload']")
     public WebElement ilanFormGorselButonu;
 
+    @FindBy (xpath = "//*[@name='facilities[][distance]']")
+    public WebElement ilanFormDistance;
+
+    @FindBy (xpath = "(//*[@class='checkbox-inline'])[1]")
+    public WebElement ilanFormWifiButonu;
 
     @FindBy (xpath = "//*[@id='select2-category_id-container']")
     public WebElement ilanFormCategoryButonu;

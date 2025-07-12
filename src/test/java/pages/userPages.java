@@ -174,16 +174,22 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='form-control ht-80']")
     public WebElement reviewWriteArea;
+
     @FindBy(xpath = "//div[@class='comment-text']/p")
     public WebElement commentText;
+
     @FindBy(xpath = "//h4[@class='author-name']")
     public WebElement authorName;
+
     @FindBy(xpath = "//div[@class='comment-date']")
     public WebElement commentDate;
+
     @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
     public WebElement reviewSubmitButton;
+
     @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/eryaman-kasmir-evleri']")
     public WebElement satilikDaire4button;
+
     @FindBy(xpath = "//input[@id='name']")
     public WebElement isimKutusu;
 
@@ -204,7 +210,6 @@ public class userPages {
 
     @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
     public WebElement successMessageAlert;
-
 
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;
@@ -251,7 +256,6 @@ public class userPages {
     @FindBy(xpath = "//div[contains(text(), '4655 Wild Indigo St')]")
     public WebElement mapAddressElement;
 
-
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 
@@ -275,7 +279,6 @@ public class userPages {
 
     @FindBy(xpath = "//span[@class='listing-location']")
     public WebElement ilanLocation;
-//>>>>>>> main
 
     /*
        ------------------------- FOOTER -------------------------

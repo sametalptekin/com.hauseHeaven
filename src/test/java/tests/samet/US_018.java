@@ -55,10 +55,7 @@ public class US_018 {
         ReusableMethods.bekle(1);
 
         List<WebElement> locations = Driver.getDriver().findElements(By.xpath("//*[@class='listing-locate']"));
-        List<WebElement> prices = Driver.getDriver().findElements(By.xpath("//*[@class='listing-card-info-price']"));
-        List<WebElement> bedRooms = Driver.getDriver().findElements(By.xpath("(//div[@class='listing-card-info-icon'])[1]"));
 
-        int minPrice = Integer.parseInt(minPriceData);
         boolean filtreHatasiVar = false;
 
         for (int i = 0; i < locations.size(); i++) {
@@ -273,6 +270,7 @@ public class US_018 {
         Assert.assertEquals(sonIlanUrl,ilkIlanUrl);
         Driver.quitDriver();
     }
+
 }
 
 

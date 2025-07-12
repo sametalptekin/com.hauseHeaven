@@ -29,7 +29,7 @@ public class US_016 {
 
         userPages userPages = new userPages();
         PageFactory.initElements(Driver.getDriver(), userPages);
-        userPages.signInButton.click();
+        userPages.signinButton.click();
 
         ReusableMethods.bekle(2);
         // 4- username Kutusuna "username" yazın

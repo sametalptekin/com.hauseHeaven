@@ -291,6 +291,8 @@ public class userPages {
        -------------------------ILAN-PROFİL-USTMENU-------------------------
 
      */
+    @FindBy(xpath = "//*[@class='add-listing']")
+    public WebElement signinButton;
 
     @FindBy(xpath = "//*[@class='add-listing']")
     public WebElement signInButton;
@@ -382,6 +384,8 @@ public class userPages {
     @FindBy (xpath = "//input[@name='features[]' and @value='5']")
     public WebElement ilanFormGardenButonu;
 
+    @FindBy (xpath = "//*[@id='multiple-upload']")
+    public WebElement ilanFormGorselButonu;
 
 
     @FindBy (xpath = "//*[@id='select2-category_id-container']")

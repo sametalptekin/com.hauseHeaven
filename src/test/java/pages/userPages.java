@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import javax.xml.xpath.XPath;
 import java.util.List;
 
 import java.awt.*;
@@ -95,6 +97,8 @@ public class userPages {
        ------------------------- HEADER -------------------------
      */
 
+    @FindBy(xpath = "//*[@class='add-listing']")
+    public WebElement signinButton;
 
     @FindBy(xpath = "//a[normalize-space(text())='Listing']")
     public WebElement listingButton;
@@ -128,9 +132,6 @@ public class userPages {
 
     @FindBy(xpath = "(//*[@class='login-item'])[2]")
     public WebElement logoutButton;
-
-    @FindBy(xpath = "//img[@alt='2468 Pine Street']")
-    public WebElement ilan1Gorsel;
 
     /*
        ------------------------- BODY -------------------------
@@ -172,22 +173,16 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='form-control ht-80']")
     public WebElement reviewWriteArea;
-
     @FindBy(xpath = "//div[@class='comment-text']/p")
     public WebElement commentText;
-
     @FindBy(xpath = "//h4[@class='author-name']")
     public WebElement authorName;
-
     @FindBy(xpath = "//div[@class='comment-date']")
     public WebElement commentDate;
-
     @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
     public WebElement reviewSubmitButton;
-
     @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/eryaman-kasmir-evleri']")
     public WebElement satilikDaire4button;
-
     @FindBy(xpath = "//input[@id='name']")
     public WebElement isimKutusu;
 
@@ -208,6 +203,7 @@ public class userPages {
 
     @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
     public WebElement successMessageAlert;
+
 
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;
@@ -245,15 +241,6 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
-    @FindBy (xpath = "//*[@jsan=\"7.address\"]")
-    public WebElement mapAdress;
-
-    @FindBy(xpath = "//h4[text()='Reach Us']/parent::div")
-    public WebElement reachUsElement;
-
-    @FindBy(xpath = "//div[contains(text(), '4655 Wild Indigo St')]")
-    public WebElement mapAddressElement;
-
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 
@@ -272,12 +259,26 @@ public class userPages {
     @FindBy(xpath = "//h2[contains(text(),'Register')]")
     public WebElement signupPageRegisterYazisi;
 
-
     @FindBy(xpath = "//h2[contains(text(),'Login')]")
     public WebElement signinPageLoginYazisi;
 
     @FindBy(xpath = "//span[@class='listing-location']")
     public WebElement ilanLocation;
+
+    @FindBy(xpath = "//img[@alt='Coastal Harmony Estates']/parent::a\n")
+    public  WebElement coastalHarmonyEstates;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//span[contains(@class, 'prt-types')]")
+    public WebElement coastalHarmonyEstatesilanTipi;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//div[contains(@class,'prt-detail-title-desc')]/span[2]")
+    public WebElement coastalHarmonyEstateskonum;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h3[contains(@class, 'prt-price-fix')]")
+    public WebElement coastalHarmonyEstatesfiyat;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h1[contains(@class, 'h3')]")
+    public WebElement coastalHarmonyEstatesbaslik;
 
 
     /*
@@ -285,139 +286,4 @@ public class userPages {
      */
 
     // footer kısmındaki locate'lerimizi bu kısma ekleyelim.
-
-
-    /*
-       -------------------------ILAN-PROFİL-USTMENU-------------------------
-
-     */
-
-    @FindBy(xpath = "//*[@class='add-listing']")
-    public WebElement signInButton;
-
-    @FindBy(xpath = "//*[@class='login-item']")
-    public WebElement profilButonu;
-
-    @FindBy(xpath = "//input[@id='email']")
-    public WebElement userNameKutusu;
-
-    @FindBy (xpath = "//*[@id=\"password\"]")
-    public WebElement passwordKutusu;
-
-    @FindBy(xpath = "//*[@class='btn btn-md full-width btn-theme-light-2 rounded']")
-    public WebElement loginButonu;
-
-    @FindBy(xpath = "//a[@class='text-success']")
-    public WebElement addPropertyButonu;
-
-    @FindBy(xpath = "//a[normalize-space(text())='Listing']")
-    public WebElement listingButonu;
-
-    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Home')]")
-    public WebElement homeButonu;
-
-    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Projects')]")
-    public WebElement projectsButonu;
-
-    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Agents')]")
-    public WebElement agentsButonu;
-
-    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Blog')]")
-    public WebElement blogButonu;
-
-    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Contact')]")
-    public WebElement contactButonu;
-
-    @FindBy(xpath = "//ul[@class='nav-menu']//a[contains(text(), 'Sign Up')]")
-    public WebElement signupButonu;
-
-    @FindBy(xpath = "//img[@class='logo']")
-    public WebElement logoButonu;
-
-    @FindBy(xpath = "//*[@class='login-item'])[1]")
-    public WebElement usernameButonu;
-
-    @FindBy(xpath = "//*[@class='login-item'])[2]")
-    public WebElement logoutButonu;
-
-    @FindBy(xpath = "//div[@role='textbox' and contains(@class, 'ck-editor__editable') and @contenteditable='true']")
-    public WebElement ilanFormContent;
-
-    @FindBy(xpath = "//*[@id='name']")
-    public WebElement ilanFormTitle;
-
-    @FindBy(xpath = "//*[@id='description']")
-    public WebElement ilanFormDescription;
-
-    @FindBy(xpath = "//input[@name='location' and @placeholder='Property location']")
-    public WebElement ilanFormPublicLocation;
-
-    @FindBy(xpath = "//*[@name=\"number_bedroom\"]")
-    public WebElement ilanFormBedrooms;
-
-    @FindBy(xpath = "//*[@name=\"number_bathroom\"]")
-    public WebElement ilanFormBathroom;
-
-    @FindBy(xpath = "//*[@id='number_floor']")
-    public WebElement ilanFormFloors;
-
-    @FindBy(xpath = "//input[@name='square' and @placeholder='Square :unit']")
-    public WebElement ilanFormSquare;
-
-    @FindBy(id ="price-number")
-    public WebElement ilanFormPrice;
-
-    @FindBy(xpath = "//select[@name='facilities[][id]']")
-    public WebElement ilanFormFacilities;
-
-    @FindBy(name = "facilities[7][distance]")
-    public WebElement ilanFormDistance;
-
-//    @FindBy(xpath = "//*[@class='btn btn-info']")
-//    public WebElement ilanFormAddNewButonu;
-
-    @FindBy (xpath = "//*[@name=\"features[]\"]")
-    public WebElement ilanFormWifiButonu;
-
-    @FindBy (xpath = "//input[@name='features[]' and @value='5']")
-    public WebElement ilanFormGardenButonu;
-
-
-
-    @FindBy (xpath = "//*[@id='select2-category_id-container']")
-    public WebElement ilanFormCategoryButonu;
-
-    @FindBy (className ="select2-search__field")
-    public WebElement CategoryButonu;
-
-    @FindBy (xpath = "//*[@class='fa fa-save']")
-    public WebElement ilanSaveAndExitButonu;
-
-    @FindBy(xpath = "//a[@href='https://qa.hauseheaven.com/public/account/properties' and @title='Properties' and contains(., 'Properties')]")
-    public WebElement accountDashboardProtertiesButonu;
-
-    @FindBy(xpath = "//a[@href='https://qa.hauseheaven.com/public/account/properties/edit/58' and normalize-space(text())=\"SHREK'IN BATAKLIGI\"]" )
-    public WebElement accountIlanButonu;
-
-    @FindBy (xpath = "//*[@class='fa fa-trash']")
-    public WebElement ilanSilmeButonu;
-
-    @FindBy (xpath = "//*[@class='fa fa-save']" )
-    public WebElement accountDashboardSaveExitButonu;
-
-    @FindBy (xpath = "//*[@class='float-end btn btn-danger delete-crud-entry']")
-    public WebElement ilanSilmeUyarıButonu;
-
-      /*
-       -------------------------KREDI SATIN ALMA-------------------------
-
-     */
-
-
-    @FindBy(xpath = "//*[@title='credits']")
-    public WebElement buyCreditsButonu;
-
-
-
-
 }

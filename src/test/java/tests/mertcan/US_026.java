@@ -83,7 +83,7 @@ public class US_026 {
         userPages.contactSubject.sendKeys(faker.superhero().name());
         userPages.contactPhone.sendKeys(faker.phoneNumber().phoneNumber());
         userPages.contactMessage.sendKeys(faker.lorem().sentence());
-        userPages.sendMessageButton.click();
+        userPages.sendMessageBttn.click();
 
         ReusableMethods.bekle(8);
         Assert.assertTrue(userPages.sendMessageSuccess.isDisplayed());

@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import javax.xml.xpath.XPath;
 import java.util.List;
 
 import java.awt.*;
@@ -234,7 +236,7 @@ public class userPages {
     public WebElement contactMessage;
 
     @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
-    public WebElement sendMessageButton;
+    public WebElement sendMessageBttn;
 
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
@@ -262,6 +264,20 @@ public class userPages {
 
     @FindBy(xpath = "//span[@class='listing-location']")
     public WebElement ilanLocation;
+
+    @FindBy(xpath = "//img[@alt='Coastal Harmony Estates']/parent::a\n")
+    public  WebElement coastalHarmonyEstates;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//span[contains(@class, 'prt-types')]")
+    public WebElement coastalHarmonyEstatesilanTipi;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//div[contains(@class,'prt-detail-title-desc')]/span[2]")
+    public WebElement coastalHarmonyEstateskonum;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h3[contains(@class, 'prt-price-fix')]")
+    public WebElement coastalHarmonyEstatesfiyat;
+
+
 
     /*
        ------------------------- FOOTER -------------------------

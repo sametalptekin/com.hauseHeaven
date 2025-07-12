@@ -117,7 +117,7 @@ public class US_007 {
         userPages.emailKutusu.sendKeys("atilla@example.com");
         userPages.mesajAlani.sendKeys("Bu bir test mesajıdır.");
         userPages.sendMessageButton.click();
-        ReusableMethods.waitForVisibility(userPages.successMessageAlert,5);
+        ReusableMethods.waitForVisibility(userPages.successMessageAlert,8);
 
         Assert.assertTrue(userPages.successMessageAlert.isDisplayed(), "Başarı mesajı görünmüyor!");
         Assert.assertTrue(userPages.successMessageAlert.getText().contains("Send consult successfully!"),

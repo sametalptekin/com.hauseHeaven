@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import javax.xml.xpath.XPath;
 import java.util.List;
 
 import java.awt.*;
@@ -95,6 +97,8 @@ public class userPages {
        ------------------------- HEADER -------------------------
      */
 
+    @FindBy(xpath = "//*[@class='add-listing']")
+    public WebElement signinButton;
 
     @FindBy(xpath = "//a[normalize-space(text())='Listing']")
     public WebElement listingButton;
@@ -128,9 +132,6 @@ public class userPages {
 
     @FindBy(xpath = "(//*[@class='login-item'])[2]")
     public WebElement logoutButton;
-
-    @FindBy(xpath = "//img[@alt='2468 Pine Street']")
-    public WebElement ilan1Gorsel;
 
     /*
        ------------------------- BODY -------------------------
@@ -172,22 +173,16 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='form-control ht-80']")
     public WebElement reviewWriteArea;
-
     @FindBy(xpath = "//div[@class='comment-text']/p")
     public WebElement commentText;
-
     @FindBy(xpath = "//h4[@class='author-name']")
     public WebElement authorName;
-
     @FindBy(xpath = "//div[@class='comment-date']")
     public WebElement commentDate;
-
     @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
     public WebElement reviewSubmitButton;
-
     @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/eryaman-kasmir-evleri']")
     public WebElement satilikDaire4button;
-
     @FindBy(xpath = "//input[@id='name']")
     public WebElement isimKutusu;
 
@@ -208,6 +203,7 @@ public class userPages {
 
     @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
     public WebElement successMessageAlert;
+
 
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;
@@ -245,15 +241,6 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
-    @FindBy (xpath = "//*[@jsan=\"7.address\"]")
-    public WebElement mapAdress;
-
-    @FindBy(xpath = "//h4[text()='Reach Us']/parent::div")
-    public WebElement reachUsElement;
-
-    @FindBy(xpath = "//div[contains(text(), '4655 Wild Indigo St')]")
-    public WebElement mapAddressElement;
-
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 
@@ -272,12 +259,14 @@ public class userPages {
     @FindBy(xpath = "//h2[contains(text(),'Register')]")
     public WebElement signupPageRegisterYazisi;
 
-
     @FindBy(xpath = "//h2[contains(text(),'Login')]")
     public WebElement signinPageLoginYazisi;
 
     @FindBy(xpath = "//span[@class='listing-location']")
     public WebElement ilanLocation;
+
+    @FindBy(xpath = "//img[@alt='Coastal Harmony Estates']/parent::a\n")
+    public  WebElement coastalHarmonyEstates;
 
 
     /*
@@ -372,14 +361,18 @@ public class userPages {
     @FindBy(xpath = "//select[@name='facilities[][id]']")
     public WebElement ilanFormFacilities;
 
-    @FindBy(name = "facilities[7][distance]")
-    public WebElement ilanFormDistance;
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//span[contains(@class, 'prt-types')]")
+    public WebElement coastalHarmonyEstatesilanTipi;
 
-//    @FindBy(xpath = "//*[@class='btn btn-info']")
-//    public WebElement ilanFormAddNewButonu;
 
-    @FindBy (xpath = "//*[@name=\"features[]\"]")
-    public WebElement ilanFormWifiButonu;
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//div[contains(@class,'prt-detail-title-desc')]/span[2]")
+    public WebElement coastalHarmonyEstateskonum;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h3[contains(@class, 'prt-price-fix')]")
+    public WebElement coastalHarmonyEstatesfiyat;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h1[contains(@class, 'h3')]")
+    public WebElement coastalHarmonyEstatesbaslik;
 
     @FindBy (xpath = "//input[@name='features[]' and @value='5']")
     public WebElement ilanFormGardenButonu;
@@ -415,13 +408,10 @@ public class userPages {
       /*
        -------------------------KREDI SATIN ALMA-------------------------
 
+
+    /*
+       ------------------------- FOOTER -------------------------
      */
 
-
-    @FindBy(xpath = "//*[@title='credits']")
-    public WebElement buyCreditsButonu;
-
-
-
-
+    // footer kısmındaki locate'lerimizi bu kısma ekleyelim.
 }

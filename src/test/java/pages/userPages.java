@@ -246,6 +246,15 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
+    @FindBy (xpath = "//*[@jsan=\"7.address\"]")
+    public WebElement mapAdress;
+
+    @FindBy(xpath = "//h4[text()='Reach Us']/parent::div")
+    public WebElement reachUsElementi;
+
+    @FindBy(xpath = "//div[contains(text(), '4655 Wild Indigo St')]")
+    public WebElement mapAddressElementi;
+
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 

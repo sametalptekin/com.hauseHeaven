@@ -144,4 +144,12 @@ public class ReusableMethods {
 
         return element;
     }
+    public static void popuptanSec(String visibleText) {
+        String dynamicXPath = "//li[normalize-space()='" + visibleText + "']";
+        try {
+            Driver.getDriver().findElement(By.xpath(dynamicXPath)).click();
+        } catch (NoSuchElementException e) {
+            System.out.println("Element bulunamadı: " + visibleText);
+        }
+    }
 }

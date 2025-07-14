@@ -1,26 +1,20 @@
 package tests.sevki;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.adminPages;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import javax.xml.namespace.QName;
 import java.time.Duration;
 import java.util.List;
 
-import static utilities.Driver.getDriver;
-
-public class US_33 {
+public class US_033 {
 
 
     @Test

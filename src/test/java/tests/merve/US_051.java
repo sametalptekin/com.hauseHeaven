@@ -104,9 +104,6 @@ public class US_051 {
 
         // 8- yeni kredi satıl alma sayfasına geçiş
 
-        userPages.buyCreditsButonu.click();
-        ReusableMethods.bekle(2);
-
 
 
 

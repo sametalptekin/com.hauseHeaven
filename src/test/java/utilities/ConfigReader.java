@@ -8,6 +8,7 @@ public class ConfigReader {
 
     static Properties properties;
 
+
     static {    // static blok herseyden once calisir
 
         String dosyaYolu= "configuration.properties";
@@ -20,7 +21,9 @@ public class ConfigReader {
 
         } catch (IOException e) {
             System.out.println("Properties dosyasi okunamadi");
+
         }
+
     }
 
     public static String getProperty(String key){

@@ -427,6 +427,7 @@ public class userPages {
     @FindBy (xpath = "//*[@class='float-end btn btn-danger delete-crud-entry']")
     public WebElement ilanSilmeUyarıButonu;
 
+
       /*
        -------------------------KREDI SATIN ALMA-------------------------
 

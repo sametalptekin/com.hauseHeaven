@@ -240,8 +240,10 @@ public class userPages {
     @FindBy(xpath = "//*[@name=\"content\"]")
     public WebElement contactMessage;
 
-    @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
+
+      @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
     public WebElement sendMessageBttn;
+
 
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;

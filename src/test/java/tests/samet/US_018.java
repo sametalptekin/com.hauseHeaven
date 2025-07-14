@@ -208,7 +208,7 @@ public class US_018 {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         userPages userPages = new userPages();
 
-        userPages.signinButton.click();
+        userPages.signInButton.click();
 
         userPages.loginFormEmail.sendKeys(ConfigReader.getProperty("user"));
         userPages.loginFormPassword.sendKeys(ConfigReader.getProperty("user_pass"));

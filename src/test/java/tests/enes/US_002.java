@@ -26,7 +26,7 @@ public class US_002 {
         softAssert.assertTrue(userPages.contactButton.isDisplayed());
         softAssert.assertTrue(userPages.signupButton.isDisplayed());
         softAssert.assertTrue(userPages.addPropertyButton.isDisplayed());
-        softAssert.assertTrue(userPages.signinButton.isDisplayed());
+        softAssert.assertTrue(userPages.signInButton.isDisplayed());
         softAssert.assertTrue(userPages.logoButton.isDisplayed());
 
         softAssert.assertAll();

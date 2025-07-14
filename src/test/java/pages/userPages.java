@@ -428,7 +428,6 @@ public class userPages {
     public WebElement ilanSilmeUyarıButonu;
 
 
-
       /*
        -------------------------KREDI SATIN ALMA-------------------------
 

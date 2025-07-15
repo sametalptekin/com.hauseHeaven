@@ -421,6 +421,39 @@ public class userPages {
     @FindBy(xpath = "//*[@title='credits']")
     public WebElement buyCreditsButonu;
 
+    @FindBy (xpath = "//*[@class='btn btn-primary mt-2']")
+    public WebElement crediPurchaseButonu;
+
+    @FindBy (id = "stripe-number")
+    public WebElement cardNumberButonu;
+
+    @FindBy (id = "stripe-exp" )
+    public WebElement cardSonKullanmaTarihButonu;
+
+    @FindBy (id = "stripe-name")
+    public WebElement cardNameButonu;
+
+    @FindBy (id = "stripe-cvc")
+    public WebElement cardCvcButonu;
+
+    @FindBy (xpath = "//*[@class='payment-checkout-btn btn btn-info']")
+    public WebElement crediCardKaydetmeButonu;
+
+
+    /*
+       -------------------------ADMIN SAYFASI LOGIN-------------------------
+
+     */
+
+    @FindBy (xpath ="//*[@class='form-control']")
+    public WebElement adminUserName;
+
+    @FindBy (xpath = "//*[@name='password']")
+    public WebElement adminPassword;
+
+    @FindBy (className = "signin")
+    public WebElement adminSignInButonu;
+
 
 
 

@@ -5,12 +5,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pages.userPages;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.Vector;
 
 public class US_003{
 
@@ -45,10 +51,46 @@ public class US_003{
 
         softAssert.assertAll();
         Driver.closeDriver();
+    }
+
+    @Test
+    public void TC_002(){
+
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        SoftAssert softAssert= new SoftAssert();
+
+        userPages userpages =new userPages();
+
+        try {
+            userpages.filtreSubmit.click();
+            softAssert.assertTrue(true);
+        }catch (Exception e){
+            softAssert.fail();
+        }
+
+        try {
+            userpages.browseMorePropertiesButonu.click();
+            softAssert.assertTrue(true);
+        }catch (Exception e){
+            softAssert.fail();
+        }
+        try {
+            userpages.browseMoreLocationsButonu.click();
+            softAssert.assertTrue(true);
+        }catch (Exception e){
+            softAssert.fail();
+        }
+        softAssert.assertAll();
+
+        Driver.quitDriver();
+    }
+
+
 
 
 
     }
-}
+
+
 
 

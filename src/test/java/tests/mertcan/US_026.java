@@ -119,7 +119,7 @@ public class US_026 {
 
         WebDriver driver = Driver.getDriver(); // Eğer yukarıda varsa tekrar yazmana gerek yok
 
-        String fullText = userPages.reachUsElementi.getText();
+        String fullText = userPages.reachUsElement.getText();
         String adres = fullText.split("\n")[1].trim();
 
         js.executeScript("window.scrollBy(0, 300);");
@@ -127,7 +127,7 @@ public class US_026 {
 
         // Harita üzerindeki adres
 
-        String mapAdress = userPages.mapAddressElementi.getText().trim();
+        String mapAdress = userPages.mapAddressElement.getText().trim();
 
         Assert.assertTrue(mapAdress.contains(adres));
         ReusableMethods.bekle(1);

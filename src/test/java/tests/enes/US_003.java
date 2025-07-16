@@ -139,6 +139,78 @@ public class US_003{
         Driver.quitDriver();
 
     }
+    @Test
+    public void TC_004(){
+
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+        userPages userPages = new userPages();
+
+        SoftAssert softAssert=new SoftAssert();
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        ReusableMethods.bekle(1);
+
+        userPages.aboutUsLinki.click();
+        softAssert.assertTrue(userPages.aboutUsYazisi.isDisplayed());
+        ReusableMethods.bekle(1);
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        userPages.contactButton.click();
+        softAssert.assertTrue(userPages.contactPageContactYazisi.isDisplayed());
+        ReusableMethods.bekle(1);
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        ReusableMethods.bekle(1);
+        userPages.termsAndConditionsLinki.click();
+        softAssert.assertTrue(userPages.termsandconditionsYazisi.isDisplayed());
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        ReusableMethods.bekle(1);
+
+        userPages.allPropertiesLinki.click();
+
+        softAssert.assertTrue(userPages.forSaleButonu.isDisplayed());
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        ReusableMethods.bekle(2);
+        userPages.housesForSaleLinki.click();
+        softAssert.assertTrue(userPages.forSaleButonu.isDisplayed());
+        ReusableMethods.bekle(1);
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        ReusableMethods.bekle(1);
+        userPages.housesForRentLinki.click();
+        softAssert.assertTrue(userPages.forRentButonu.isDisplayed());
+
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        ReusableMethods.bekle(2);
+
+        String link1 = userPages.birinciNewsLinki.getAttribute("href");
+        int status1 = ReusableMethods.getHttpResponseCode(link1);
+        System.out.println("Birinci link HTTP durumu: " + status1);
+        softAssert.assertTrue(status1 < 400, "Birinci news link kırık: HTTP " + status1);
+
+        String link2 = userPages.ikinciNewsLinki.getAttribute("href");
+        int status2 = ReusableMethods.getHttpResponseCode(link2);
+        System.out.println("İkinci link HTTP durumu: " + status2);
+        softAssert.assertTrue(status2 < 400, "İkinci news link kırık: HTTP " + status2);
+
+        String link3 = userPages.ucuncuNewsLinki.getAttribute("href");
+        int status3 = ReusableMethods.getHttpResponseCode(link3);
+        System.out.println("Üçüncü link HTTP durumu: " + status3);
+        softAssert.assertTrue(status3 < 400, "Üçüncü news link kırık: HTTP " + status3);
+
+        String link4 = userPages.dorduncuNewsLinki.getAttribute("href");
+        int status4 = ReusableMethods.getHttpResponseCode(link4);
+        System.out.println("Dorduncu link HTTP durumu: " + status4);
+        softAssert.assertTrue(status4 < 400, "İkinci news link kırık: HTTP " + status4);
+
+        String link5 = userPages.besinciNewsLinki.getAttribute("href");
+        int status5 = ReusableMethods.getHttpResponseCode(link5);
+        System.out.println("Besinci link HTTP durumu: " + status5);
+        softAssert.assertTrue(status5 < 400, "Üçüncü news link kırık: HTTP " + status5);
+
+        softAssert.assertAll();
+
+        Driver.quitDriver();
+    }
 
 
 

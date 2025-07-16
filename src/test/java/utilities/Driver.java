@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -41,6 +42,13 @@ public class Driver {
         if (driver == null){
 
             switch (browser){
+
+                case "brave" :
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions braveOptions = new ChromeOptions();
+                    braveOptions.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+                    driver = new ChromeDriver(braveOptions);
+                    break;
 
                 case "firefox" :
                     WebDriverManager.firefoxdriver().setup();

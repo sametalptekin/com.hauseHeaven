@@ -240,22 +240,11 @@ public class userPages {
     @FindBy(xpath = "//*[@name=\"content\"]")
     public WebElement contactMessage;
 
-
-      @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
+    @FindBy(xpath = "(//*[@type=\"submit\"])[1]")
     public WebElement sendMessageBttn;
-
 
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
-
-    @FindBy (xpath = "//*[@jsan=\"7.address\"]")
-    public WebElement mapAdress;
-
-    @FindBy(xpath = "//h4[text()='Reach Us']/parent::div")
-    public WebElement reachUsElementi;
-
-    @FindBy(xpath = "//div[contains(text(), '4655 Wild Indigo St')]")
-    public WebElement mapAddressElementi;
 
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
@@ -289,6 +278,14 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class='place-card place-card-large']")
     public WebElement mapAddressElement;
+
+    @FindBy(xpath = "//label[@for='cp-sale']")
+    public WebElement forSaleButonu;
+
+    @FindBy(xpath = "//label[@for='cp-rent']")
+    public WebElement forRentButonu;
+
+
 
 
     /*
@@ -429,6 +426,11 @@ public class userPages {
     @FindBy (xpath = "//*[@class='float-end btn btn-danger delete-crud-entry']")
     public WebElement ilanSilmeUyarıButonu;
 
+    @FindBy(xpath = "(//a[@class='btn btn-theme-light-2 rounded'])[1]")
+    public WebElement browseMorePropertiesButonu;
+
+    @FindBy(xpath = "(//a[@class='btn btn-theme-light-2 rounded'])[2]")
+    public WebElement browseMoreLocationsButonu;
 
       /*
        -------------------------KREDI SATIN ALMA-------------------------
@@ -437,6 +439,45 @@ public class userPages {
     /*
        ------------------------- FOOTER -------------------------
      */
+
+    @FindBy(xpath = "//a[@title='About us']")
+    public WebElement aboutUsLinki;
+
+    @FindBy(xpath = "//a[@title='Contact us']")
+    public WebElement contactUsLinki;
+
+    @FindBy(xpath = "//a[@title='Terms & Conditions']")
+    public WebElement termsAndConditionsLinki;
+
+    @FindBy(xpath = "//a[@title='All properties']")
+    public WebElement allPropertiesLinki;
+
+    @FindBy(xpath = "//a[@title='Houses for sale']")
+    public WebElement housesForSaleLinki;
+
+    @FindBy(xpath = "//a[@title='Houses for rent']")
+    public WebElement housesForRentLinki;
+
+    @FindBy(xpath = "//a[@title='The Benefits Of Investing In Emerging Real Estate Markets']")
+    public WebElement birinciNewsLinki;
+    @FindBy(xpath = "//a[@title='A Guide To Negotiating The Best Deal On Your Dream Home']")
+    public WebElement ikinciNewsLinki;
+    @FindBy(xpath = "//a[@title='The Rise Of Sustainable Homes: Building For A Greener Future']")
+    public WebElement ucuncuNewsLinki;
+    @FindBy(xpath = "//a[@title='How to Stage Your Home for a Quick and Profitable Sale']")
+    public WebElement dorduncuNewsLinki;
+    @FindBy(xpath = "//a[@title='Investing in Vacation Rental Properties: A Lucrative Opportunity']")
+    public WebElement besinciNewsLinki;
+
+    @FindBy(xpath = "//h1[@class ='ipt-title']")
+    public WebElement aboutUsYazisi;
+
+    @FindBy(xpath = "//h1[@class='ipt-title']")
+    public WebElement termsandconditionsYazisi;
+
+
+
+
 
     // footer kısmındaki locate'lerimizi bu kısma ekleyelim.
 }

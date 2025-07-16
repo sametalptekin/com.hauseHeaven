@@ -84,12 +84,70 @@ public class US_003{
 
         Driver.quitDriver();
     }
+    @Test
+    public void TC_003() throws InterruptedException {
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+        Driver.getDriver().manage().deleteAllCookies();
+
+        SoftAssert softAssert=new SoftAssert();
+
+        userPages userPages=new userPages();
+        ReusableMethods.bekle(2);
 
 
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        System.out.println(Driver.getDriver().getCurrentUrl());
+
+        userPages.filtreSubmit.click();
+        String expectedResult = "https://qa.hauseheaven.com/public/";
+        String actualResult = Driver.getDriver().getCurrentUrl();
+        System.out.println(Driver.getDriver().getCurrentUrl());
+
+        softAssert.assertTrue(actualResult.contains(expectedResult),"hata");
+        ReusableMethods.bekle(2);
+        userPages.logoButton.click();
+        ReusableMethods.bekle(2);
+        for (int i = 0; i < 4; i++) {
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
+            Thread.sleep(500);
+        }
 
 
+        userPages.browseMorePropertiesButonu.click();
+        String expectedPropertiesResult = "https://qa.hauseheaven.com/public/";
+        String actualPropertiesResult = Driver.getDriver().getCurrentUrl();
+
+        softAssert.assertTrue(actualPropertiesResult.contains(expectedPropertiesResult),"hata1");
+
+        ReusableMethods.bekle(2);
+        userPages.homeButton.click();
+        ReusableMethods.bekle(2);
+        for (int i = 0; i < 7; i++) {
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
+            Thread.sleep(500);
+        }
+
+        userPages.browseMoreLocationsButonu.click();
+        String expectedLocationResult = "https://qa.hauseheaven.com/public/";
+        String actualLocationResult = Driver.getDriver().getCurrentUrl();
+
+        softAssert.assertTrue(actualLocationResult.contains(expectedLocationResult),"hata2");
+
+
+        softAssert.assertAll();
+        Driver.quitDriver();
 
     }
+
+
+
+
+
+
+
+
+}
 
 
 

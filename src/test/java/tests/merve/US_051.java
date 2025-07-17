@@ -112,7 +112,7 @@ public class US_051 {
 
         // 8- yeni kredi satıl alma sayfasına geçiş
 
-        userPages.buyCreditsButonu.click();
+        userPages.buyCreditsButtonDashboard.click();
         ReusableMethods.bekle(2);
 
         userPages.crediPurchaseButonu.click();
@@ -132,8 +132,6 @@ public class US_051 {
 
         userPages.crediCardKaydetmeButonu.click();
         ReusableMethods.bekle(2);
-
-
 
 
 

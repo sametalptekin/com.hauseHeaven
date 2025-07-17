@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import javax.xml.xpath.XPath;
 import java.util.List;
 
 import java.awt.*;
@@ -95,6 +97,8 @@ public class userPages {
        ------------------------- HEADER -------------------------
      */
 
+    @FindBy(xpath = "//*[@class='add-listing']")
+    public WebElement signinButton;
 
     @FindBy(xpath = "//a[normalize-space(text())='Listing']")
     public WebElement listingButton;
@@ -128,9 +132,6 @@ public class userPages {
 
     @FindBy(xpath = "(//*[@class='login-item'])[2]")
     public WebElement logoutButton;
-
-    @FindBy(xpath = "//img[@alt='2468 Pine Street']")
-    public WebElement ilan1Gorsel;
 
     /*
        ------------------------- BODY -------------------------
@@ -245,15 +246,6 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
-    @FindBy (xpath = "//*[@jsan=\"7.address\"]")
-    public WebElement mapAdress;
-
-    @FindBy(xpath = "//h4[text()='Reach Us']/parent::div")
-    public WebElement reachUsElement;
-
-    @FindBy(xpath = "//div[contains(text(), '4655 Wild Indigo St')]")
-    public WebElement mapAddressElement;
-
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 
@@ -272,12 +264,28 @@ public class userPages {
     @FindBy(xpath = "//h2[contains(text(),'Register')]")
     public WebElement signupPageRegisterYazisi;
 
-
     @FindBy(xpath = "//h2[contains(text(),'Login')]")
     public WebElement signinPageLoginYazisi;
 
     @FindBy(xpath = "//span[@class='listing-location']")
     public WebElement ilanLocation;
+
+    @FindBy(xpath = "//img[@alt='Coastal Harmony Estates']/parent::a\n")
+    public WebElement coastalHarmonyEstates;
+
+    @FindBy(xpath = "//*[@class='cn-info-content'][1]")
+    public WebElement reachUsElement;
+
+    @FindBy(xpath = "//*[@class='place-card place-card-large']")
+    public WebElement mapAddressElement;
+
+    @FindBy(xpath = "//label[@for='cp-sale']")
+    public WebElement forSaleButonu;
+
+    @FindBy(xpath = "//label[@for='cp-rent']")
+    public WebElement forRentButonu;
+
+
 
 
     /*
@@ -291,8 +299,6 @@ public class userPages {
        -------------------------ILAN-PROFİL-USTMENU-------------------------
 
      */
-    @FindBy(xpath = "//*[@class='add-listing']")
-    public WebElement signinButton;
 
     @FindBy(xpath = "//*[@class='add-listing']")
     public WebElement signInButton;
@@ -372,14 +378,17 @@ public class userPages {
     @FindBy(xpath = "//select[@name='facilities[][id]']")
     public WebElement ilanFormFacilities;
 
-    @FindBy(name = "facilities[7][distance]")
-    public WebElement ilanFormDistance;
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//span[contains(@class, 'prt-types')]")
+    public WebElement coastalHarmonyEstatesilanTipi;
 
-//    @FindBy(xpath = "//*[@class='btn btn-info']")
-//    public WebElement ilanFormAddNewButonu;
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//div[contains(@class,'prt-detail-title-desc')]/span[2]")
+    public WebElement coastalHarmonyEstateskonum;
 
-    @FindBy (xpath = "//*[@name=\"features[]\"]")
-    public WebElement ilanFormWifiButonu;
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h3[contains(@class, 'prt-price-fix')]")
+    public WebElement coastalHarmonyEstatesfiyat;
+
+    @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//h1[contains(@class, 'h3')]")
+    public WebElement coastalHarmonyEstatesbaslik;
 
     @FindBy (xpath = "//input[@name='features[]' and @value='5']")
     public WebElement ilanFormGardenButonu;
@@ -387,6 +396,11 @@ public class userPages {
     @FindBy (xpath = "//*[@id='multiple-upload']")
     public WebElement ilanFormGorselButonu;
 
+    @FindBy (xpath = "//*[@name='facilities[][distance]']")
+    public WebElement ilanFormDistance;
+
+    @FindBy (xpath = "(//*[@class='checkbox-inline'])[1]")
+    public WebElement ilanFormWifiButonu;
 
     @FindBy (xpath = "//*[@id='select2-category_id-container']")
     public WebElement ilanFormCategoryButonu;
@@ -412,14 +426,54 @@ public class userPages {
     @FindBy (xpath = "//*[@class='float-end btn btn-danger delete-crud-entry']")
     public WebElement ilanSilmeUyarıButonu;
 
+    @FindBy(xpath = "(//a[@class='btn btn-theme-light-2 rounded'])[1]")
+    public WebElement browseMorePropertiesButonu;
+
+    @FindBy(xpath = "(//a[@class='btn btn-theme-light-2 rounded'])[2]")
+    public WebElement browseMoreLocationsButonu;
+
       /*
        -------------------------KREDI SATIN ALMA-------------------------
 
+
+    /*
+       ------------------------- FOOTER -------------------------
      */
 
+    @FindBy(xpath = "//a[@title='About us']")
+    public WebElement aboutUsLinki;
 
-    @FindBy(xpath = "//*[@title='credits']")
-    public WebElement buyCreditsButonu;
+    @FindBy(xpath = "//a[@title='Contact us']")
+    public WebElement contactUsLinki;
+
+    @FindBy(xpath = "//a[@title='Terms & Conditions']")
+    public WebElement termsAndConditionsLinki;
+
+    @FindBy(xpath = "//a[@title='All properties']")
+    public WebElement allPropertiesLinki;
+
+    @FindBy(xpath = "//a[@title='Houses for sale']")
+    public WebElement housesForSaleLinki;
+
+    @FindBy(xpath = "//a[@title='Houses for rent']")
+    public WebElement housesForRentLinki;
+
+    @FindBy(xpath = "//a[@title='The Benefits Of Investing In Emerging Real Estate Markets']")
+    public WebElement birinciNewsLinki;
+    @FindBy(xpath = "//a[@title='A Guide To Negotiating The Best Deal On Your Dream Home']")
+    public WebElement ikinciNewsLinki;
+    @FindBy(xpath = "//a[@title='The Rise Of Sustainable Homes: Building For A Greener Future']")
+    public WebElement ucuncuNewsLinki;
+    @FindBy(xpath = "//a[@title='How to Stage Your Home for a Quick and Profitable Sale']")
+    public WebElement dorduncuNewsLinki;
+    @FindBy(xpath = "//a[@title='Investing in Vacation Rental Properties: A Lucrative Opportunity']")
+    public WebElement besinciNewsLinki;
+
+    @FindBy(xpath = "//h1[@class ='ipt-title']")
+    public WebElement aboutUsYazisi;
+
+    @FindBy(xpath = "//h1[@class='ipt-title']")
+    public WebElement termsandconditionsYazisi;
 
     @FindBy (xpath = "//*[@class='btn btn-primary mt-2']")
     public WebElement crediPurchaseButonu;
@@ -457,4 +511,6 @@ public class userPages {
 
 
 
+
+    // footer kısmındaki locate'lerimizi bu kısma ekleyelim.
 }

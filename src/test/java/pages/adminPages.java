@@ -103,14 +103,24 @@ public class adminPages {
     @FindBy(xpath ="//*[@class='btn btn-icon btn-sm btn-danger deleteDialog'][1]")
     public WebElement deleteButton;
 
-    @FindBy(xpath ="   //*[@class='float-end btn btn-danger delete-crud-entry']")
+    @FindBy(xpath ="//*[@class='float-end btn btn-danger delete-crud-entry']")
     public WebElement alertMsg;
 
-    @FindBy(xpath ="   //*[@class='toast-message']")
+    @FindBy(xpath ="//*[@class='toast-message']")
     public WebElement successfully;
 
+    @FindBy(xpath ="//*[@class='btn btn-icon btn-sm btn-primary'][1]")
+    public WebElement editButton;
 
-    //*[@class='toast-message']
+
+
+
+
+
+
+
+
+
 
 
 

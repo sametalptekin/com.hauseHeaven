@@ -24,7 +24,7 @@ public class US_035 {
     @Test
     public void TC_001() {
         WebDriver driver = Driver.getDriver();
-        driver.get(ConfigReader.getProperty("url"));
+        driver.get(ConfigReader.getProperty("toAdminUrl"));
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 

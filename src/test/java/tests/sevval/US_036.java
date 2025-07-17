@@ -21,7 +21,7 @@ public class US_036 {
     @Test
     public void TC_001() {
         WebDriver driver = Driver.getDriver();
-        driver.get(ConfigReader.getProperty("url"));
+        driver.get(ConfigReader.getProperty("toAdminUrl"));
     }
 
     @Test

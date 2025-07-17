@@ -32,7 +32,7 @@ public class US_051 {
 
         userPages userPages = new userPages();
         PageFactory.initElements(Driver.getDriver(), userPages);
-        userPages.signInButton.click();
+        userPages.signinButton.click();
 
         ReusableMethods.bekle(2);
         // 4- username Kutusuna "username" yazın
@@ -81,7 +81,7 @@ public class US_051 {
 
         userPages userPages = new userPages();
         PageFactory.initElements(Driver.getDriver(), userPages);
-        userPages.signInButton.click();
+        userPages.signinButton.click();
 
         ReusableMethods.bekle(2);
         // 4- username Kutusuna "username" yazın
@@ -104,10 +104,8 @@ public class US_051 {
 
         // 8- yeni kredi satıl alma sayfasına geçiş
 
-        userPages.buyCreditsButonu.click();
+        userPages.buyCreditsButtonDashboard.click();
         ReusableMethods.bekle(2);
-
-
 
 
 

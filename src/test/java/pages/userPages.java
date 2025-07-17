@@ -1,8 +1,10 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 
 import javax.xml.xpath.XPath;
 import java.util.List;
@@ -12,7 +14,16 @@ import java.awt.*;
 
 public class userPages {
 
+
+    public static WebElement logoutButton;
+    public HTMLInputElement listingButton;
+    public Alert loginFormEmail;
+    public Alert loginFormPassword;
+
+    public void userPages(){
+
     public userPages(){
+
         PageFactory.initElements(utilities.Driver.getDriver(), this);
     }
 
@@ -98,7 +109,7 @@ public class userPages {
      */
 
     @FindBy(xpath = "//*[@class='add-listing']")
-    public WebElement signinButton;
+    public static WebElement signinButton;
 
     @FindBy(xpath = "//a[normalize-space(text())='Listing']")
     public WebElement listingButton;

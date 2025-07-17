@@ -377,6 +377,9 @@ public class userPages {
 
     @FindBy(xpath = "//select[@name='facilities[][id]']")
     public WebElement ilanFormFacilities;
+    @FindBy(name = "facilities[7][distance]")
+    public WebElement ilanFormDistance;;
+
 
     @FindBy(xpath = "//div[contains(@class, 'property_block_wrap')]//span[contains(@class, 'prt-types')]")
     public WebElement coastalHarmonyEstatesilanTipi;
@@ -396,8 +399,6 @@ public class userPages {
     @FindBy (xpath = "//*[@id='multiple-upload']")
     public WebElement ilanFormGorselButonu;
 
-    @FindBy (xpath = "//*[@name='facilities[][distance]']")
-    public WebElement ilanFormDistance;
 
     @FindBy (xpath = "(//*[@class='checkbox-inline'])[1]")
     public WebElement ilanFormWifiButonu;
@@ -434,6 +435,29 @@ public class userPages {
 
       /*
        -------------------------KREDI SATIN ALMA-------------------------
+
+       */
+    @FindBy(xpath = "//*[@title='credits']")
+    public WebElement buyCreditsButonu;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary mt-2']")
+    public WebElement paketSatinAlmaButton;
+
+    @FindBy(id = "stripe-number")
+    public WebElement cardNumberButonu;
+
+    @FindBy(id = "stripe-name")
+    public WebElement cardNameButonu;
+
+    @FindBy(id = "stripe-exp")
+    public WebElement cardSonKullanmaTarihButonu;
+
+    @FindBy(xpath = "//*[@id='stripe-cvc']")
+    public WebElement cardCvcButonu;
+
+    @FindBy(xpath = "//*[@class='payment-checkout-btn btn btn-info']")
+    public WebElement checkoutButonu;
+
 
 
     /*
@@ -478,17 +502,17 @@ public class userPages {
     @FindBy (xpath = "//*[@class='btn btn-primary mt-2']")
     public WebElement crediPurchaseButonu;
 
-    @FindBy (id = "stripe-number")
-    public WebElement cardNumberButonu;
-
-    @FindBy (id = "stripe-exp" )
-    public WebElement cardSonKullanmaTarihButonu;
-
-    @FindBy (id = "stripe-name")
-    public WebElement cardNameButonu;
-
-    @FindBy (id = "stripe-cvc")
-    public WebElement cardCvcButonu;
+//    @FindBy (id = "stripe-number")
+//    public WebElement cardNumberButonu;
+//
+//    @FindBy (id = "stripe-exp" )
+//    public WebElement cardSonKullanmaTarihButonu;
+//
+//    @FindBy (id = "stripe-name")
+//    public WebElement cardNameButonu;
+//
+//    @FindBy (id = "stripe-cvc")
+//    public WebElement cardCvcButonu;
 
     @FindBy (xpath = "//*[@class='payment-checkout-btn btn btn-info']")
     public WebElement crediCardKaydetmeButonu;

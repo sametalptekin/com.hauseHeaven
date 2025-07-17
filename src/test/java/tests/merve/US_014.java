@@ -43,6 +43,7 @@ public class US_014 {
         PageFactory.initElements(Driver.getDriver(), userPages);
         userPages.signInButton.click();
 
+
         ReusableMethods.bekle(2);
         // 4- username Kutusuna "username" yazın
 
@@ -84,7 +85,7 @@ public class US_014 {
 
         userPages userPages = new userPages();
         PageFactory.initElements(Driver.getDriver(), userPages);
-        userPages.signinButton.click();
+        userPages.signInButton.click();
 
         ReusableMethods.bekle(2);
         // 4- username Kutusuna "username" yazın
@@ -119,6 +120,9 @@ public class US_014 {
 
         userPages.ilanFormContent.sendKeys(ConfigReader.getProperty("content"));
         ReusableMethods.bekle(2);
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0, 100);");
+        ReusableMethods.bekle(1);
 
 //        userPages.ilanFormGorselButonu.click();
 //        ReusableMethods.bekle(1);
@@ -162,6 +166,7 @@ public class US_014 {
         userPages.ilanFormPrice.sendKeys(ConfigReader.getProperty("price"));
         ReusableMethods.bekle(2);
 
+
         userPages.ilanFormFacilities.sendKeys(ConfigReader.getProperty("facilities"));
         ReusableMethods.bekle(2);
 
@@ -193,60 +198,6 @@ public class US_014 {
 
     }
 
-//    @Test
-//    public void eksikBosIlanTesti(){
-//        // 1- "https://qa.househeaven.com/" adresine gidin
-//        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
-//
-//        // 2- house heaven anasayfaya gittiğini dogrulayın
-//
-//        SoftAssert softAssert = new SoftAssert();
-//
-//        String expectedUrl = ConfigReader.getProperty("toUrl");
-//        String actualUrl = Driver.getDriver().getCurrentUrl();
-//
-//        softAssert.assertEquals(actualUrl,expectedUrl,"url expected url'den farklı");
-//
-//        // 3- sign in butonuna basın
-//
-//        userPages userPages = new userPages();
-//        PageFactory.initElements(Driver.getDriver(), userPages);
-//        userPages.signinButton.click();
-//
-//        ReusableMethods.bekle(2);
-//        // 4- username Kutusuna "username" yazın
-//
-//        userPages.userNameKutusu.sendKeys(ConfigReader.getProperty("toUser"));
-//
-//        ReusableMethods.bekle(2);
-//        // 5- password kutusuna "şifre" girin
-//
-//        userPages.passwordKutusu.sendKeys(ConfigReader.getProperty("userPass"));
-//
-//        ReusableMethods.bekle(2);
-//        //  6- login butonuna tıkla
-//        userPages.loginButonu.click();
-//        ReusableMethods.bekle(2);
-//
-//        // 7- ilan ekleme butonuna tıklama
-//
-//        userPages.addPropertyButonu.click();
-//
-//        ReusableMethods.bekle(2);
-//
-//        userPages.ilanFormTitle.sendKeys(ConfigReader.getProperty("ilanTitle"));
-//        ReusableMethods.bekle(2);
-//
-//        userPages.ilanFormContent.sendKeys(ConfigReader.getProperty("content"));
-//        ReusableMethods.bekle(2);
-//
-//        userPages.ilanSaveAndExitButonu.click();
-//        ReusableMethods.bekle(2);
-//
-//
-//        softAssert.assertAll();
-//
-//        Driver.quitDriver();
 
     @Test
     public void eksikBosIlanTesti() {
@@ -263,7 +214,7 @@ public class US_014 {
             // 3- Sign in işlemi
             userPages userPages = new userPages();
             PageFactory.initElements(Driver.getDriver(), userPages);
-            userPages.signinButton.click();
+            userPages.signInButton.click();
             ReusableMethods.bekle(2);
 
             // 4- Username gir
@@ -333,7 +284,7 @@ public class US_014 {
             String path = directory + "/" + fileName + "_" + timestamp + ".png";
 
             FileUtils.copyFile(src, new File(path));
-            System.out.println("📸 Ekran görüntüsü kaydedildi: " + new File(path).getAbsolutePath());
+            System.out.println(" Ekran görüntüsü kaydedildi: " + new File(path).getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
             System.err.println("Ekran görüntüsü kaydedilemedi!");

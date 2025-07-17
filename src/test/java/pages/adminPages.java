@@ -79,6 +79,9 @@ public class adminPages {
     @FindBy(xpath ="//*[@id='cms-plugins-real-estate-category']")
     public WebElement categoriesMenu;
 
+    @FindBy (xpath = "//*[@id=\"cms-plugins-package\"]/a/span")
+    public WebElement adminPackagesButonu;
+
 
     @FindBy(xpath ="//*[@id='cms-plugins-real-estate-type']")
     public WebElement typesMenu;

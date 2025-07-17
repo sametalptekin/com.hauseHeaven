@@ -1,10 +1,8 @@
 package pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.w3c.dom.html.HTMLInputElement;
 
 import javax.xml.xpath.XPath;
 import java.util.List;
@@ -14,16 +12,7 @@ import java.awt.*;
 
 public class userPages {
 
-
-    public static WebElement logoutButton;
-    public HTMLInputElement listingButton;
-    public Alert loginFormEmail;
-    public Alert loginFormPassword;
-
-    public void userPages(){
-
     public userPages(){
-
         PageFactory.initElements(utilities.Driver.getDriver(), this);
     }
 
@@ -109,7 +98,7 @@ public class userPages {
      */
 
     @FindBy(xpath = "//*[@class='add-listing']")
-    public static WebElement signinButton;
+    public WebElement signinButton;
 
     @FindBy(xpath = "//a[normalize-space(text())='Listing']")
     public WebElement listingButton;
@@ -444,10 +433,10 @@ public class userPages {
     @FindBy(xpath = "(//a[@class='btn btn-theme-light-2 rounded'])[2]")
     public WebElement browseMoreLocationsButonu;
 
-      /*
-       -------------------------KREDI SATIN ALMA-------------------------
+    /*
+     -------------------------KREDI SATIN ALMA-------------------------
 
-       */
+     */
     @FindBy(xpath = "//*[@title='credits']")
     public WebElement buyCreditsButonu;
 

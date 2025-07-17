@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,10 +9,13 @@ import org.w3c.dom.html.HTMLInputElement;
 
 public class userPages {
 
+    public static WebElement logoutButton;
     public HTMLInputElement listingButton;
+    public Alert loginFormEmail;
+    public Alert loginFormPassword;
 
     public void userPages(){
-        PageFactory.initElements(utilities.Driver.getDriver("https://qa.hauseheaven.com/admin/login"), this);
+        PageFactory.initElements(utilities.Driver.getDriver(), this);
     }
 
 
@@ -20,7 +24,7 @@ public class userPages {
      */
 
     @FindBy(xpath = "//*[@class='add-listing']")
-    public WebElement signinButton;
+    public static WebElement signinButton;
 
 
 

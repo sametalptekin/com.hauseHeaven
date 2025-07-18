@@ -117,17 +117,17 @@ public class US_026 {
         js.executeScript("window.scrollBy(0, 180);");
         ReusableMethods.bekle(1);
 
-        WebDriver driver = Driver.getDriver(); // Eğer yukarıda varsa tekrar yazmana gerek yok
+        WebDriver driver = Driver.getDriver();
 
-        String fullText = userPages.reachUsElementi.getText();
+        String fullText = userPages.reachUsElement.getText();
         String adres = fullText.split("\n")[1].trim();
 
-        js.executeScript("window.scrollBy(0, 300);");
+        js.executeScript("window.scrollBy(0, 280);");
         ReusableMethods.bekle(3);
 
         // Harita üzerindeki adres
 
-        String mapAdress = userPages.mapAddressElementi.getText().trim();
+        String mapAdress = userPages.mapAddressElement.getText().trim();
 
         Assert.assertTrue(mapAdress.contains(adres));
         ReusableMethods.bekle(1);

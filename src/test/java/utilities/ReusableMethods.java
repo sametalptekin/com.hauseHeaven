@@ -5,12 +5,13 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 import java.util.function.Function;
 
 public class ReusableMethods {
@@ -150,6 +151,19 @@ public class ReusableMethods {
             Driver.getDriver().findElement(By.xpath(dynamicXPath)).click();
         } catch (NoSuchElementException e) {
             System.out.println("Element bulunamadı: " + visibleText);
+        }
+    }
+
+    public static int getHttpResponseCode(String url) {
+        try {
+            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(5000);
+            connection.connect();
+            return connection.getResponseCode();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 }

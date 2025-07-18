@@ -212,4 +212,17 @@ public class US_004 {
 
     }
 
+    @Test
+    public void TC_007(){
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+        userPages userPages=new userPages();
+
+        userPages.filtreSubmit.click();
+        ReusableMethods.bekle(2);
+
+        Assert.assertTrue(userPages.sonucYazisi.isDisplayed());
+
+        Driver.quitDriver();
+    }
+
 }

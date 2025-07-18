@@ -112,6 +112,21 @@ public class adminPages {
     @FindBy(xpath ="   //*[@class='toast-message']")
     public WebElement successfully;
 
+    @FindBy (xpath = "//*[@id=\"main\"]/div[3]/div[2]/a")
+    public WebElement pendingPropertiesButonu;
+
+    @FindBy (xpath = "//*[@id=\"botble-real-estate-tables-property-table\"]/tbody/tr[1]/td[4]/a")
+    public WebElement adminIlanButonu;
+
+    @FindBy (xpath = "//*[@id='select2-moderation_status-container']")
+    public WebElement ilanGorunurYapmaButonu;
+
+    @FindBy (xpath = "//*[@class='col-md-3 right-sidebar']")
+    public WebElement approvedButonu;
+
+    @FindBy (xpath = "//*[@id=\"botble-real-estate-forms-property-form\"]/div[2]/div[2]/div[1]/div[2]/div/button[1]")
+    public WebElement adminSaveExitButonu;
+
 
     //*[@class='toast-message']
 

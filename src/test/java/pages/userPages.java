@@ -145,7 +145,7 @@ public class userPages {
     @FindBy(xpath = "//*[@id=\"app\"]/section/div[2]/div[1]/div[1]/div[1]/div/h3[1]")
     public WebElement SatilikDaire4baslik;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/section/div/div[2]/div[2]/div[2]/div[3]/div/div[4]/div[2]/a")
+    @FindBy(xpath = "//*[@id=\"app\"]/section/div/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[2]/a")
     public WebElement ornekBinabutton;
 
     @FindBy(xpath = "//input[@placeholder='Search for a location']")
@@ -190,7 +190,7 @@ public class userPages {
     @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
     public WebElement reviewSubmitButton;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/section/div/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[2]/a")
+    @FindBy(xpath = "//*[@id=\"app\"]/section/div/div[2]/div[2]/div[2]/div[3]/div/div[4]/div[2]/a")
     public WebElement satilikDaire4button;
 
     @FindBy(xpath = "//input[@id='name']")

@@ -48,7 +48,7 @@ public class US_007 {
         } else{
             Assert.fail("Save silinemedi");
         }
-
+        tearDown();
 
     }
     @Test
@@ -99,7 +99,7 @@ public class US_007 {
                 System.err.println("Beklenen tarih: " + expectedDate + " | Gerçek: " + actualDate);
             }
         }
-
+        tearDown();
 
     }
     @Test

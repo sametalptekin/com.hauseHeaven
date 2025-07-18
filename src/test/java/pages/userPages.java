@@ -163,6 +163,9 @@ public class userPages {
     @FindBy(xpath ="//span[@id='select2-select-bedroom-container']" )
     public WebElement bedRooms;
 
+    @FindBy(xpath = "//div[@class='listing-card-info-icon']")
+    public List<WebElement> tumOdaBilgileri;
+
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
 
@@ -216,6 +219,9 @@ public class userPages {
 
     @FindBy(xpath = "//*[@class=\"fr-position\"]")
     public WebElement agentsProperties;
+
+    @FindBy(xpath = "//h4[@class='m-0']")
+    public WebElement sonucYazisi;
 
     @FindBy(xpath = "(//a[@class='prt-view'])[1]")
     public WebElement firstAgent;
@@ -433,6 +439,15 @@ public class userPages {
 
     @FindBy(xpath = "(//a[@class='btn btn-theme-light-2 rounded'])[2]")
     public WebElement browseMoreLocationsButonu;
+
+    @FindBy(xpath = "//div[@title='Los Angeles']")
+    public WebElement losAngelesLocation;
+
+    @FindBy(xpath = "//span[@class='listing-location']")
+    public List<WebElement> tumIlanKonumElementleri;
+
+    @FindBy(xpath = "//h6[@class='listing-card-info-price']")
+    public List<WebElement> ilanFiyatListesi;
 
     /*
      -------------------------KREDI SATIN ALMA-------------------------

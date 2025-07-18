@@ -82,10 +82,8 @@ public class adminPages {
     @FindBy(xpath = "//*[@id=\"cms-plugins-package\"]/a/span")
     public WebElement adminPackagesButonu;
 
-
     @FindBy(xpath = "//*[@id='cms-plugins-real-estate-type']")
     public WebElement typesMenu;
-
 
     @FindBy(xpath = "//*[@data-action='create']")
     public WebElement createButton;
@@ -96,7 +94,6 @@ public class adminPages {
     @FindBy(xpath = "//*[@placeholder='Position/Company']")
     public WebElement positionBox;
 
-
     @FindBy(xpath = "//*[@role='textbox']")
     public WebElement textbox;
 
@@ -106,12 +103,20 @@ public class adminPages {
     @FindBy(xpath = "//*[@class='btn btn-icon btn-sm btn-danger deleteDialog'][1]")
     public WebElement deleteButton;
 
+    @FindBy(xpath ="//*[@class='float-end btn btn-danger delete-crud-entry']")
+    public WebElement alertMsg;
+
+    @FindBy(xpath ="//*[@class='toast-message']")
+    public WebElement successfully;
+
+    @FindBy(xpath ="//*[@class='btn btn-icon btn-sm btn-primary'][1]")
+    public WebElement editButton;
+
     @FindBy(xpath = "   //*[@class='float-end btn btn-danger delete-crud-entry']")
     public WebElement alertMsg;
 
     @FindBy(xpath = "   //*[@class='toast-message']")
     public WebElement successfully;
-
 }
 //*[@class='toast-message']
 

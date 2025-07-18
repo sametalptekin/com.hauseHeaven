@@ -214,6 +214,7 @@ public class userPages {
     @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
     public WebElement successMessageAlert;
 
+    //mertcan
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;
 
@@ -253,6 +254,12 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
+    @FindBy(xpath = "//*[@class='cn-info-content'][1]")
+    public WebElement reachUsElement;
+
+    @FindBy(xpath = "//div[@class='place-name']")
+    public WebElement mapAddressElement;     //mertcan
+
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 
@@ -279,12 +286,6 @@ public class userPages {
 
     @FindBy(xpath = "//img[@alt='Coastal Harmony Estates']/parent::a\n")
     public WebElement coastalHarmonyEstates;
-
-    @FindBy(xpath = "//*[@class='cn-info-content'][1]")
-    public WebElement reachUsElement;
-
-    @FindBy(xpath = "//*[@class='place-card place-card-large']")
-    public WebElement mapAddressElement;
 
     @FindBy(xpath = "//label[@for='cp-sale']")
     public WebElement forSaleButonu;

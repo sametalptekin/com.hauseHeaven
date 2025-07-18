@@ -8,7 +8,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US28 {
+public class US_028 {
     @Test
     public void TC_001(){
 

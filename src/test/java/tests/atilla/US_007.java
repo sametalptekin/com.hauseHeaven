@@ -27,9 +27,9 @@ public class US_007 {
         userPages userPages = new userPages();
         userPages.listingButton.click();
         ReusableMethods.bekle(3);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire6button);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire4button);
         ReusableMethods.bekle(2);
-        userPages.satilikDaire6button.click();
+        userPages.satilikDaire4button.click();
         ReusableMethods.bekle(3);
         userPages.saveButton.click();
         String expectedMessage1 = "Added to wishlist successfully!";
@@ -48,7 +48,7 @@ public class US_007 {
         } else{
             Assert.fail("Save silinemedi");
         }
-
+        tearDown();
 
     }
     @Test
@@ -61,9 +61,9 @@ public class US_007 {
         userPages.loginButton.click();
 
         userPages.listingButton.click();
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire4button);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.ornekBinabutton);
         ReusableMethods.bekle(2);
-        userPages.satilikDaire4button.click();
+        userPages.ornekBinabutton.click();
         ReusableMethods.waitForVisibility(userPages.reviewWriteArea, 10);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.reviewSubmitButton);
         ReusableMethods.bekle(5);
@@ -99,7 +99,7 @@ public class US_007 {
                 System.err.println("Beklenen tarih: " + expectedDate + " | Gerçek: " + actualDate);
             }
         }
-
+        tearDown();
 
     }
     @Test
@@ -107,9 +107,9 @@ public class US_007 {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         userPages userPages = new userPages();
         userPages.listingButton.click();
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire6button);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire4button);
         ReusableMethods.bekle(3);
-        userPages.satilikDaire6button.click();
+        userPages.satilikDaire4button.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.sendMessageButton);
         ReusableMethods.bekle(3);
         userPages.isimKutusu.sendKeys("Atilla Test");

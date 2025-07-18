@@ -32,6 +32,7 @@ public class US_011 {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0, 180);");
         ReusableMethods.bekle(1);
+        tearDown();
     }
 
     @Test

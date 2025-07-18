@@ -89,7 +89,30 @@ public class US_004 {
         Driver.quitDriver();
 
     }
+    @Test
+    public void TC_004(){
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+        userPages userPages=new userPages();
 
+        String bedRoomsData= "1";
 
+        userPages.bedRooms.click();
+        ReusableMethods.popuptanSec(bedRoomsData);
+        ReusableMethods.bekle(1);
 
+        userPages.filtreSubmit.click();
+
+        List<WebElement> odaBilgisi =userPages.tumOdaBilgileri;
+        Assert.assertFalse(odaBilgisi.isEmpty());
+
+        for (WebElement oda : odaBilgisi) {
+            String odaYazisi = oda.getText().trim();
+            if (odaYazisi.toLowerCase().contains("bed")) {
+                Assert.assertTrue(odaYazisi.toLowerCase().contains("1 bed"),
+                        "Farklı odalı ilan bulundu: " + odaYazisi);
+            }
+        }
+        Driver.quitDriver();
+
+}
 }

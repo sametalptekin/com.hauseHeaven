@@ -163,6 +163,9 @@ public class userPages {
     @FindBy(xpath ="//span[@id='select2-select-bedroom-container']" )
     public WebElement bedRooms;
 
+    @FindBy(xpath = "//div[@class='listing-card-info-icon']")
+    public List<WebElement> tumOdaBilgileri;
+
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
 

@@ -133,10 +133,26 @@ public class userPages {
     @FindBy(xpath = "(//*[@class='login-item'])[2]")
     public WebElement logoutButton;
 
+    @FindBy(xpath = "//i[@class='fas fa-sign-out-alt']")
+    public WebElement logoutButtonUst;
+
+    @FindBy(xpath = "//input[@type='checkbox']")
+    public WebElement rememberMeCheckbox;
+    @FindBy(xpath = "//i[@class='fas fa-user']")
+    public WebElement DashboardUser;
+
     /*
        ------------------------- BODY -------------------------
 
      */
+    @FindBy(xpath ="//button[@class='btn search-btn']")
+    public WebElement SearchButton;
+    @FindBy(xpath = "//button[@class='js-cookie-consent-agree cookie-consent__agree']")
+    public WebElement AllowCookies;
+    @FindBy(xpath = "(//i[@class='far fa-heart'])[1]")
+    public WebElement Favori;
+    @FindBy(xpath ="//span[@id='select2-city_id-container']" )
+    public WebElement city;
 
 
     @FindBy(xpath = "//h3[@class='prt-price-fix']")
@@ -548,6 +564,31 @@ public class userPages {
 
     @FindBy (className = "signin")
     public WebElement adminSignInButonu;
+    /*
+ -------------------------register-------------------------
+ */
+    @FindBy (xpath = "//input[@id='first_name']")
+    public WebElement firstNameRegister;
+    @FindBy (xpath = "//input[@id='last_name']")
+    public WebElement lastNameRegister;
+    @FindBy (xpath = "//*[@id='password-confirm']")
+    public WebElement comfirmBox;
+    @FindBy (xpath = "//*[@class='btn btn-md full-width btn-theme-light-2 rounded']")
+    public WebElement registerButton;
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement emailBox;
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement userNameBox;
+
+    @FindBy(xpath = "//*[@title='Password must be at least 8 characters long and contain at least one letter, one number and one special character.']")
+    public WebElement passwordWarningBox;
+
+    @FindBy(xpath = "//strong[text()='The username has already been taken.']")
+    public WebElement duplicateWarningUsername;
+
+    @FindBy(xpath = "//strong[text()='The email has already been taken.']")
+    public WebElement duplicateWarningEmail;
+
 
 
 

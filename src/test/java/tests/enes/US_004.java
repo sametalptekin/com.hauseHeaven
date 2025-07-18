@@ -180,4 +180,36 @@ public class US_004 {
         Driver.quitDriver();
     }
 
+    @Test
+    public void TC_006(){
+
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+        userPages userPages=new userPages();
+
+        String minPriceData = "500";
+        String maxPriceData = "2000";
+        userPages.minPrice.click();
+        ReusableMethods.popuptanSec(minPriceData);
+        ReusableMethods.bekle(1);
+        userPages.maxPrice.click();
+        ReusableMethods.popuptanSec(maxPriceData);
+        ReusableMethods.bekle(1);
+
+        userPages.filtreSubmit.click();
+        ReusableMethods.bekle(1);
+
+        String sonucMetni = userPages.sonucYazisi.getText(); // "Found 1 - 1 Of 1 Results"
+
+        String[] parcalar = sonucMetni.split("Of");
+        String sonucSayisi = parcalar[1].replaceAll("[^0-9]", ""); // sadece sayı: "1"
+        int toplamSonuc = Integer.parseInt(sonucSayisi);
+
+        System.out.println("Toplam sonuç sayısı: " + toplamSonuc);
+
+        Assert.assertTrue(toplamSonuc > 0, "Hiç ilan bulunamadı!");
+
+        Driver.quitDriver();
+
+    }
+
 }

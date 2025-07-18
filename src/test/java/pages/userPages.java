@@ -220,6 +220,9 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"fr-position\"]")
     public WebElement agentsProperties;
 
+    @FindBy(xpath = "//h4[@class='m-0']")
+    public WebElement sonucYazisi;
+
     @FindBy(xpath = "(//a[@class='prt-view'])[1]")
     public WebElement firstAgent;
 

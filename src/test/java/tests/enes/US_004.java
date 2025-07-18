@@ -51,5 +51,45 @@ public class US_004 {
         Driver.quitDriver();
 
     }
+    @Test
+    public void TC_003(){
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+        userPages userPages=new userPages();
+
+        String minPriceData = "500";
+        String maxPriceData = "2000";
+
+        int min = Integer.parseInt(minPriceData);
+        int max = Integer.parseInt(maxPriceData);
+
+        userPages.minPrice.click();
+        ReusableMethods.popuptanSec(minPriceData);
+        ReusableMethods.bekle(1);
+        userPages.maxPrice.click();
+        ReusableMethods.popuptanSec(maxPriceData);
+        ReusableMethods.bekle(1);
+
+        userPages.filtreSubmit.click();
+        List<WebElement> fiyatlar = userPages.ilanFiyatListesi;
+        Assert.assertFalse(fiyatlar.isEmpty(), "Hiç ilan bulunamadı");
+
+        for (WebElement  fiyatElement : fiyatlar){
+            String fiyatText = fiyatElement.getText();
+            fiyatText = fiyatText.replaceAll("[^0-9]", "");
+            if (fiyatText.isEmpty()) {
+                Assert.fail("Fiyat metni boş veya sayısal değil");
+            }
+
+            int actualFiyat = Integer.parseInt(fiyatText);
+
+            Assert.assertTrue(actualFiyat >= min && actualFiyat <= max,
+                    "Fiyat aralığı dışında: $" + actualFiyat);
+
+        }
+        Driver.quitDriver();
+
+    }
+
+
 
 }

@@ -440,6 +440,9 @@ public class userPages {
     @FindBy(xpath = "//span[@class='listing-location']")
     public List<WebElement> tumIlanKonumElementleri;
 
+    @FindBy(xpath = "//h6[@class='listing-card-info-price']")
+    public List<WebElement> ilanFiyatListesi;
+
     /*
      -------------------------KREDI SATIN ALMA-------------------------
 

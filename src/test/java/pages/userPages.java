@@ -434,6 +434,12 @@ public class userPages {
     @FindBy(xpath = "(//a[@class='btn btn-theme-light-2 rounded'])[2]")
     public WebElement browseMoreLocationsButonu;
 
+    @FindBy(xpath = "//div[@title='Los Angeles']")
+    public WebElement losAngelesLocation;
+
+    @FindBy(xpath = "//span[@class='listing-location']")
+    public List<WebElement> tumIlanKonumElementleri;
+
     /*
      -------------------------KREDI SATIN ALMA-------------------------
 

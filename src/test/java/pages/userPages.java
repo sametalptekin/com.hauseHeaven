@@ -133,19 +133,36 @@ public class userPages {
     @FindBy(xpath = "(//*[@class='login-item'])[2]")
     public WebElement logoutButton;
 
+    @FindBy(xpath = "//i[@class='fas fa-sign-out-alt']")
+    public WebElement logoutButtonUst;
+
+    @FindBy(xpath = "//input[@type='checkbox']")
+    public WebElement rememberMeCheckbox;
+    @FindBy(xpath = "//i[@class='fas fa-user']")
+    public WebElement DashboardUser;
+
     /*
        ------------------------- BODY -------------------------
 
      */
+    @FindBy(xpath ="//button[@class='btn search-btn']")
+    public WebElement SearchButton;
+    @FindBy(xpath = "//button[@class='js-cookie-consent-agree cookie-consent__agree']")
+    public WebElement AllowCookies;
+    @FindBy(xpath = "(//i[@class='far fa-heart'])[1]")
+    public WebElement Favori;
+    @FindBy(xpath ="//span[@id='select2-city_id-container']" )
+    public WebElement city;
 
-    @FindBy(xpath = "//a[@class='prt-view']")
-    public WebElement satilikDaire6button;
 
     @FindBy(xpath = "//h3[@class='prt-price-fix']")
-    public WebElement satilikDaire6fiyat;
+    public WebElement satilikDaire4fiyat;
 
-    @FindBy(xpath = "//h3[contains(text(), 'Ego Dominus Tuus')]")
-    public WebElement getSatilikDaire6baslik;
+    @FindBy(xpath = "//*[@id=\"app\"]/section/div[2]/div[1]/div[1]/div[1]/div/h3[1]")
+    public WebElement SatilikDaire4baslik;
+
+    @FindBy(xpath = "//*[@id=\"app\"]/section/div/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[2]/a")
+    public WebElement ornekBinabutton;
 
     @FindBy(xpath = "//input[@placeholder='Search for a location']")
     public WebElement locationInput;
@@ -161,6 +178,9 @@ public class userPages {
 
     @FindBy(xpath ="//span[@id='select2-select-bedroom-container']" )
     public WebElement bedRooms;
+
+    @FindBy(xpath = "//div[@class='listing-card-info-icon']")
+    public List<WebElement> tumOdaBilgileri;
 
     @FindBy(xpath = "//*[@class='btn search-btn']")
     public WebElement filtreSubmit;
@@ -186,7 +206,7 @@ public class userPages {
     @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
     public WebElement reviewSubmitButton;
 
-    @FindBy(xpath = "//a[@class='prt-view' and @href='https://qa.hauseheaven.com/properties/eryaman-kasmir-evleri']")
+    @FindBy(xpath = "//*[@id=\"app\"]/section/div/div[2]/div[2]/div[2]/div[3]/div/div[4]/div[2]/a")
     public WebElement satilikDaire4button;
 
     @FindBy(xpath = "//input[@id='name']")
@@ -210,11 +230,15 @@ public class userPages {
     @FindBy(xpath = "//div[contains(@class, 'alert-success')]")
     public WebElement successMessageAlert;
 
+    //mertcan
     @FindBy(xpath = "//*[@data-slick-index='4']")
     public List<WebElement> projeSayisi;
 
     @FindBy(xpath = "//*[@class=\"fr-position\"]")
     public WebElement agentsProperties;
+
+    @FindBy(xpath = "//h4[@class='m-0']")
+    public WebElement sonucYazisi;
 
     @FindBy(xpath = "(//a[@class='prt-view'])[1]")
     public WebElement firstAgent;
@@ -246,6 +270,12 @@ public class userPages {
     @FindBy(xpath = "//*[@class=\"contact-message contact-success-message\"]")
     public WebElement sendMessageSuccess;
 
+    @FindBy(xpath = "//*[@class='cn-info-content'][1]")
+    public WebElement reachUsElement;
+
+    @FindBy(xpath = "//div[@class='place-name']")
+    public WebElement mapAddressElement;     //mertcan
+
     @FindBy(xpath = "//h1[contains(text(),'Properties')]")
     public WebElement propertyPagePropertyYazisi;
 
@@ -272,12 +302,6 @@ public class userPages {
 
     @FindBy(xpath = "//img[@alt='Coastal Harmony Estates']/parent::a\n")
     public WebElement coastalHarmonyEstates;
-
-    @FindBy(xpath = "//*[@class='cn-info-content'][1]")
-    public WebElement reachUsElement;
-
-    @FindBy(xpath = "//*[@class='place-card place-card-large']")
-    public WebElement mapAddressElement;
 
     @FindBy(xpath = "//label[@for='cp-sale']")
     public WebElement forSaleButonu;
@@ -447,10 +471,19 @@ public class userPages {
     @FindBy(xpath = "(//a[@class='btn btn-theme-light-2 rounded'])[2]")
     public WebElement browseMoreLocationsButonu;
 
-      /*
-       -------------------------KREDI SATIN ALMA-------------------------
+    @FindBy(xpath = "//div[@title='Los Angeles']")
+    public WebElement losAngelesLocation;
 
-       */
+    @FindBy(xpath = "//span[@class='listing-location']")
+    public List<WebElement> tumIlanKonumElementleri;
+
+    @FindBy(xpath = "//h6[@class='listing-card-info-price']")
+    public List<WebElement> ilanFiyatListesi;
+
+    /*
+     -------------------------KREDI SATIN ALMA-------------------------
+
+     */
     @FindBy(xpath = "//*[@title='credits']")
     public WebElement buyCreditsButonu;
 
@@ -545,6 +578,31 @@ public class userPages {
 
     @FindBy (className = "signin")
     public WebElement adminSignInButonu;
+    /*
+ -------------------------register-------------------------
+ */
+    @FindBy (xpath = "//input[@id='first_name']")
+    public WebElement firstNameRegister;
+    @FindBy (xpath = "//input[@id='last_name']")
+    public WebElement lastNameRegister;
+    @FindBy (xpath = "//*[@id='password-confirm']")
+    public WebElement comfirmBox;
+    @FindBy (xpath = "//*[@class='btn btn-md full-width btn-theme-light-2 rounded']")
+    public WebElement registerButton;
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement emailBox;
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement userNameBox;
+
+    @FindBy(xpath = "//*[@title='Password must be at least 8 characters long and contain at least one letter, one number and one special character.']")
+    public WebElement passwordWarningBox;
+
+    @FindBy(xpath = "//strong[text()='The username has already been taken.']")
+    public WebElement duplicateWarningUsername;
+
+    @FindBy(xpath = "//strong[text()='The email has already been taken.']")
+    public WebElement duplicateWarningEmail;
+
 
 
 

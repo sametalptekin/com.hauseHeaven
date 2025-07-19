@@ -31,6 +31,7 @@ public class US_006 {
         userPages userPages = new userPages();
         userPages.listingButton.click();
         ReusableMethods.bekle(3);
+        tearDown();
 
     }
 
@@ -45,6 +46,7 @@ public class US_006 {
         } else {
             System.out.println("Sayfa açılamadı veya title beklendiği gibi değil." + "\nBeklenen: " + expectedTitle +"\nGerçek: " + actualTitle);
             Assert.fail("Title kontrolü başarısız.");
+            tearDown();
         }
 
     }
@@ -57,19 +59,19 @@ public class US_006 {
         userPages userPages = new userPages();
         userPages.listingButton.click();
         ReusableMethods.bekle(3);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire6button);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", userPages.satilikDaire4button);
         ReusableMethods.bekle(2);
-        userPages.satilikDaire6button.click();
+        userPages.satilikDaire4button.click();
         ReusableMethods.bekle(3);
-        String ilanUrl = "https://qa.hauseheaven.com/properties/satilik-daire-6";
+        String ilanUrl = "https://qa.hauseheaven.com/properties/satilik-daire-4";
         ReusableMethods.waitForPageToLoad(5);
         String girilenIlanUrl = Driver.getDriver().getCurrentUrl();
 
         if (!ilanUrl.equals(girilenIlanUrl)) {
             Driver.getDriver().get(ilanUrl);
         }
-        String expectedilanTitle = "Ego Dominus Tuus";
-        String actualIlanTitle = userPages.getSatilikDaire6baslik.getText();
+        String expectedilanTitle = "Satılık Daire";
+        String actualIlanTitle = userPages.SatilikDaire4baslik.getText();
 
         if (actualIlanTitle.contains(expectedilanTitle)) {
             System.out.println("Sayfa başarılı şekilde açıldı. Title: " + actualIlanTitle);
@@ -78,8 +80,8 @@ public class US_006 {
             Assert.fail("Title kontrolü başarısız.");
         }
 
-        String expectedFiyatTitle = "$130,000";
-        String actualFiyatTitle = userPages.satilikDaire6fiyat.getText();
+        String expectedFiyatTitle = "$12million";
+        String actualFiyatTitle = userPages.satilikDaire4fiyat.getText();
         actualFiyatTitle.replaceAll("[^\\d]", "");
 
         if (actualFiyatTitle.contains(expectedFiyatTitle)) {
@@ -88,6 +90,7 @@ public class US_006 {
             System.out.println("Sayfa açılamadı veya fiyat beklendiği gibi değil." + "\nBeklenen: " + expectedFiyatTitle +"\nGerçek: " + actualFiyatTitle);
             Assert.fail("Fiyat kontrolü başarısız.");
         }
+        tearDown();
 
 
     }
@@ -159,6 +162,7 @@ public class US_006 {
         }
 
         Assert.assertFalse(filtreHatasiVar, "Bazı ilanlar filtre kriterlerine uymuyor.");
+
     }
 
 

@@ -36,6 +36,7 @@ public class US_008 {
             System.err.println("Proje sayıları uyumsuz!"+ "\nBeklenen proje sayısı: " + expectedSayiResult + "\nama bulunan: " + actualSayiResult );
             Assert.fail("Proje sayısı beklenenden farklı!");
         }
+        tearDown();
     }
     @Test
     public void TC_002(){
@@ -63,6 +64,7 @@ public class US_008 {
         // Fiyat doğrulama
         String actualFiyat = userPages.coastalHarmonyEstatesfiyat.getText().replace("\"", "").trim();
         Assert.assertTrue(actualFiyat.contains(expectedFiyat), "Fiyat bilgisi eşleşmiyor!");
+        tearDown();
 
     }
 

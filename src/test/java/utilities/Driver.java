@@ -33,7 +33,7 @@ public class Driver {
         atanmis degeri kullansin
      */
 
-    static WebDriver driver; // null
+    public static WebDriver driver; // null
 
     public static WebDriver getDriver(){
 

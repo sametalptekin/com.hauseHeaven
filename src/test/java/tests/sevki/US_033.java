@@ -1,26 +1,23 @@
 package tests.sevki;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.adminPages;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import javax.xml.namespace.QName;
 import java.time.Duration;
 import java.util.List;
 
-import static utilities.Driver.getDriver;
 
-public class US_33 {
+
+
+public class US_033 {
 
 
     @Test
@@ -44,6 +41,7 @@ public class US_33 {
         Driver.quitDriver();
 
     }
+
     @Test
     public void TC_002() {
 
@@ -99,9 +97,39 @@ public class US_33 {
         Driver.quitDriver();
     }
 
+    @Test
+    public void TC_004() throws InterruptedException {
+
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.bekle(2);
+        adminPages adminPages = new adminPages();
+
+
+        adminPages.loginFormEmail.sendKeys(ConfigReader.getProperty("admin"));
+        adminPages.loginFormPassword.sendKeys(ConfigReader.getProperty("admin_pass"));
+        adminPages.loginButton.click();
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(adminPages.testimonialsMenu));
+        adminPages.testimonialsMenu.click();
+
+        adminPages.editButton.click();
+
+
+        adminPages.textbox.clear();
+        Thread. sleep(3000);
+        adminPages.textbox.sendKeys("The service quality was exceptional and the staff was very helpful.");
+        ReusableMethods.bekle(2);
+
+        adminPages.saveButton.click();
+
+        Assert.assertTrue(adminPages.successfully.isDisplayed());
+        ReusableMethods.bekle(2);
+        Driver.quitDriver();
+    }
 
     @Test
-    public void TC_004() {
+    public void TC_005() {
 
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         ReusableMethods.bekle(2);
@@ -124,6 +152,7 @@ public class US_33 {
         ReusableMethods.bekle(2);
         Driver.quitDriver();
     }
+
 
 
 }

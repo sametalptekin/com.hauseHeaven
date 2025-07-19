@@ -285,6 +285,20 @@ public class userPages {
     @FindBy(xpath = "//label[@for='cp-rent']")
     public WebElement forRentButonu;
 
+    @FindBy (xpath = "//*[@id='select2-city_id-container']")
+    public WebElement anasayfaFiltrelemeVilla;
+
+    @FindBy (xpath = "//*[@id='select2-city_id-container']")
+    public WebElement anasayfaFiltrelemeCity;
+
+    @FindBy (xpath = "select2-search__field")
+    public WebElement cityKutusu;
+
+    @FindBy (xpath = "//*[@id='select2-city_id-container']")
+    public  WebElement ilanFormCity;
+
+    @FindBy (className = "select2-search__field")
+    public WebElement ilanFormCityKutusu;
 
 
 

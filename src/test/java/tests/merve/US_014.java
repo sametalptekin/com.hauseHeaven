@@ -148,6 +148,7 @@ public class US_014 {
 
         Thread.sleep(3000);  // dosyanın yüklenmesini beklemek için
 
+
         userPages.ilanFormPublicLocation.sendKeys(ConfigReader.getProperty("publicLocation"));
         ReusableMethods.bekle(2);
 

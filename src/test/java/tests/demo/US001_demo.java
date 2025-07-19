@@ -1,13 +1,11 @@
 package tests.demo;
 
-import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -23,10 +21,11 @@ import java.nio.file.Files;
 import java.util.Base64;
 import java.util.List;
 
-public class US_001_demo {
 
-    @Test
-    public void TC001() {
+  public class US001_demo {
+
+        @Test
+        public void TC001() {
 
             // 1- "https://qa.househeaven.com/" adresine gidin
             Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
@@ -251,60 +250,60 @@ public class US_001_demo {
 
         }
 
-    @Test
-    public void TC003(){
-        Driver.getDriver().get(ConfigReader.getProperty("toAdminUrl"));
-        ReusableMethods.bekle(2);
+        @Test
+        public void TC003(){
+            Driver.getDriver().get(ConfigReader.getProperty("toAdminUrl"));
+            ReusableMethods.bekle(2);
 
-        SoftAssert softAssert = new SoftAssert();
+            SoftAssert softAssert = new SoftAssert();
 
-        String expectedUrl = ConfigReader.getProperty("toAdminUrl");
-        String actualUrl = Driver.getDriver().getCurrentUrl();
-        softAssert.assertEquals(actualUrl, expectedUrl, "url, expected url'den farklı");
+            String expectedUrl = ConfigReader.getProperty("toAdminUrl");
+            String actualUrl = Driver.getDriver().getCurrentUrl();
+            softAssert.assertEquals(actualUrl, expectedUrl, "url, expected url'den farklı");
 
-        adminPages adminPages = new adminPages();
-        PageFactory.initElements(Driver.getDriver(), adminPages);
-        ReusableMethods.bekle(2);
+            adminPages adminPages = new adminPages();
+            PageFactory.initElements(Driver.getDriver(), adminPages);
+            ReusableMethods.bekle(2);
 
-        adminPages.loginFormEmail.sendKeys(ConfigReader.getProperty("toAdmin"));
-        ReusableMethods.bekle(2);
+            adminPages.loginFormEmail.sendKeys(ConfigReader.getProperty("toAdmin"));
+            ReusableMethods.bekle(2);
 
-        adminPages.loginFormPassword.sendKeys(ConfigReader.getProperty("adminPass"));
-        ReusableMethods.bekle(2);
+            adminPages.loginFormPassword.sendKeys(ConfigReader.getProperty("adminPass"));
+            ReusableMethods.bekle(2);
 
-        adminPages.loginButton.click();
-        ReusableMethods.bekle(3);
+            adminPages.loginButton.click();
+            ReusableMethods.bekle(3);
 
-        adminPages.pendingPropertiesButonu.click();
-        ReusableMethods.bekle(1);
+            adminPages.pendingPropertiesButonu.click();
+            ReusableMethods.bekle(1);
 
-        adminPages.adminIlanButonu.click();
-        ReusableMethods.bekle(1);
+            adminPages.adminIlanButonu.click();
+            ReusableMethods.bekle(1);
 
-        adminPages.ilanGorunurYapmaButonu.click();
-        ReusableMethods.bekle(1);
+            adminPages.ilanGorunurYapmaButonu.click();
+            ReusableMethods.bekle(1);
 
-        Actions actions = new Actions(Driver.getDriver());
-        actions
-                .sendKeys(Keys.ARROW_DOWN) // Bir alt seçeneğe iner
-                .sendKeys(Keys.ENTER)      // Seçimi onaylar
-                .build()
-                .perform();
-
-
-        adminPages.adminSaveExitButonu.click();
-        ReusableMethods.bekle(1);
-
-        softAssert.assertAll();
-        Driver.quitDriver();
+            Actions actions = new Actions(Driver.getDriver());
+            actions
+                    .sendKeys(Keys.ARROW_DOWN) // Bir alt seçeneğe iner
+                    .sendKeys(Keys.ENTER)      // Seçimi onaylar
+                    .build()
+                    .perform();
 
 
-    }
+            adminPages.adminSaveExitButonu.click();
+            ReusableMethods.bekle(1);
 
-    @Test
-    public void TC_004() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-        userPages userPages = new userPages();
+            softAssert.assertAll();
+            Driver.quitDriver();
+
+
+        }
+
+        @Test
+        public void TC_004() {
+            Driver.getDriver().get(ConfigReader.getProperty("url"));
+            userPages userPages = new userPages();
 
 //        // 3- sign in butonuna basın
 //
@@ -326,20 +325,20 @@ public class US_001_demo {
 //        userPages.loginButonu.click();
 //        ReusableMethods.bekle(2);
 
-        String locationData = "Denver";
-        String minPriceData = "500";
-        String maxPriceData = "50000";
+            String locationData = "Denver";
+            String minPriceData = "500";
+            String maxPriceData = "50000";
 
 
 
-        userPages.locationInput.sendKeys(locationData);
-        ReusableMethods.bekle(1);
-        userPages.minPrice.click();
-        ReusableMethods.popuptanSec(minPriceData);
-        ReusableMethods.bekle(1);
-        userPages.maxPrice.click();
-        ReusableMethods.popuptanSec(maxPriceData);
-        ReusableMethods.bekle(1);
+            userPages.locationInput.sendKeys(locationData);
+            ReusableMethods.bekle(1);
+            userPages.minPrice.click();
+            ReusableMethods.popuptanSec(minPriceData);
+            ReusableMethods.bekle(1);
+            userPages.maxPrice.click();
+            ReusableMethods.popuptanSec(maxPriceData);
+            ReusableMethods.bekle(1);
 
 
 
@@ -352,50 +351,56 @@ public class US_001_demo {
 
 
 
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy(0, 100);");
-        ReusableMethods.bekle(1);
+            JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+            js.executeScript("window.scrollBy(0, 100);");
+            ReusableMethods.bekle(1);
 
-        userPages.filtreSubmit.click();
-        ReusableMethods.bekle(1);
+            userPages.filtreSubmit.click();
+            ReusableMethods.bekle(1);
 
-        js.executeScript("window.scrollBy(0, 100);");
-        ReusableMethods.bekle(1);
+            js.executeScript("window.scrollBy(0, 100);");
+            ReusableMethods.bekle(1);
 
-        List<WebElement> locations = Driver.getDriver().findElements(By.xpath("//*[@class='listing-locate']"));
+            List<WebElement> locations = Driver.getDriver().findElements(By.xpath("//*[@class='listing-locate']"));
 
-        boolean filtreHatasiVar = false;
+            boolean filtreHatasiVar = false;
 
-        for (int i = 0; i < locations.size(); i++) {
-            String loc = locations.get(i).getText().toLowerCase();
+            for (int i = 0; i < locations.size(); i++) {
+                String loc = locations.get(i).getText().toLowerCase();
 
-            if (!loc.contains(locationData.toLowerCase())) {
-                System.out.println("Hata! Beklenmeyen Lokasyon Bulundu: " + loc);
-                filtreHatasiVar = true;
+                if (!loc.contains(locationData.toLowerCase())) {
+                    System.out.println("Hata! Beklenmeyen Lokasyon Bulundu: " + loc);
+                    filtreHatasiVar = true;
+                }
             }
+
+            if (filtreHatasiVar) {
+                try {
+                    String screenshotPath = ReusableMethods.getScreenshot("TC_004_FiltreHatasi");
+                    System.out.println("Ekran görüntüsü alındı: " + screenshotPath);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            Assert.assertFalse(filtreHatasiVar, "Bazı ilanlar filtre kriterlerine uymuyor.");
+            Driver.quitDriver();
+
+
+
+
         }
 
-        if (filtreHatasiVar) {
-            try {
-                String screenshotPath = ReusableMethods.getScreenshot("TC_004_FiltreHatasi");
-                System.out.println("Ekran görüntüsü alındı: " + screenshotPath);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
 
-        Assert.assertFalse(filtreHatasiVar, "Bazı ilanlar filtre kriterlerine uymuyor.");
-        Driver.quitDriver();
+
+
+
+
+
+
     }
 
 
-
-
-
-
-
-
-}
 
 
 
